@@ -4,6 +4,7 @@ import ParticlesComponent from "../../components/ParticlesComponent/ParticlesCom
 import MyCard from "../../components/Card/MyCard";
 import PaperList from "../../components/PaperList/PaperList";
 import ProfileImage from "/assets/selfie.jpg"; // Image of yourself
+import ProjectList from "../../components/ProjectList/ProjectList";
 import "./Home.css";
 
 const Home = () => {
@@ -44,8 +45,8 @@ const Home = () => {
           </ul>
         </section>
         <section className="paper-section">
-          <h2>Research Papers</h2>
-          {/* <PaperList /> */}
+          <h2>Projects</h2>
+          <ProjectList />
         </section>
       </main>
     </div>
