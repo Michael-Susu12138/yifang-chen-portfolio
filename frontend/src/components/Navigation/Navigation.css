@@ -1,0 +1,21 @@
+/* Navigation.css */
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+.navbar {
+  font-size: 1.7rem;
+  font-family: "Righteous", cursive;
+}
+
+.nav-item {
+  padding: 0 1rem; /* Add padding to the left and right of the link */
+}
+.dropdown-menu {
+  width: 28vh; /* Set the width of the dropdown menu */
+  height: 20vh; /* Set the height of the dropdown menu */
+  overflow-y: scroll; /* Add a scrollbar if the menu overflows */
+  font-size: 2.5vh;
+}
+.dropdown-item {
+  padding: 1.3rem 1rem; /* Add padding to the top and bottom and left and right of the item */
+}
+

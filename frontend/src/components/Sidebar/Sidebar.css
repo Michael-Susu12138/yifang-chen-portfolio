@@ -1,0 +1,136 @@
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  padding: 20px;
+  height: 100vh;
+  margin: 30px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute space between elements */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
+}
+
+/* Profile Section */
+.profile {
+  text-align: center;
+}
+
+.profile .avatar {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Slight shadow for the avatar */
+}
+
+.profile .avatar img {
+  width: 100%;
+  height: auto;
+}
+
+.profile h2 {
+  font-size: 1.7em;
+  margin-bottom: 5px;
+  color: #fdf0d5; /* Slightly off-white for contrast */
+}
+
+/* Description and Research Interest */
+.description {
+  font-size: 1.1em;
+  color: #cccccc; /* Light gray for description */
+  margin: 5px 0;
+}
+
+/* .research-interest {
+  font-size: 1em;
+  color: #fdf0d5; /* Highlighted color for research areas */
+/* font-weight: bold;
+  margin: 10px 0;
+} */
+.research-interest {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 30px 0;
+}
+
+.research-interest strong {
+  color: #fdf0d5; /* Highlighted color for the 'Research Interests' label */
+}
+
+/* Contact Info Section at the bottom */
+.contact-info-bottom {
+  margin-top: auto; /* Push the contact info to the bottom */
+  margin-bottom: 10px; /* Space between contact info and motto */
+  text-align: left; /* Align text to the left */
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  font-size: 0.85em; /* Smaller font size for contact details */
+}
+
+.contact-item .icon {
+  margin-right: 6px;
+  color: #fdf0d5; /* Slightly off-white for icons */
+  font-size: 0.9em; /* Smaller icon size */
+}
+
+/* Motto Section */
+.motto {
+  text-align: center;
+  font-style: italic;
+  color: #999999; /* Slightly lighter color for contrast */
+  margin: 10px 0; /* Space above and below the motto */
+  padding: 10px;
+  border-top: 1px solid #333; /* Separator line for a cleaner look */
+  border-bottom: 1px solid #333; /* Bottom border to complete the box effect */
+}
+
+/* Social Links Bottom Layout */
+.social-links-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Space between social icons */
+  padding-bottom: 20px; /* Add padding at the bottom for spacing */
+}
+
+.social-links-bottom a {
+  color: #f0f0f0;
+  font-size: 1.4em; /* Adjust icon size to be smaller */
+  transition: color 0.3s ease;
+}
+
+.social-links-bottom a:hover {
+  color: #780000; /* Highlight color on hover */
+}
+
+/* Contact Me Button Styling */
+.contact-me-button-container {
+  text-align: center;
+  margin: 15px 0; /* Space above and below the button */
+}
+
+.contact-me-button {
+  display: inline-block;
+  background-color: #780000; /* Button background color */
+  color: #fdf0d5; /* Button text color */
+  padding: 10px 20px; /* Padding for size */
+  border-radius: 25px; /* Rounded corners for a pill-shaped button */
+  text-decoration: none; /* Remove underline */
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.contact-me-button:hover {
+  background-color: #a80000; /* Darker shade on hover */
+  transform: translateY(-3px); /* Slight lift effect on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}

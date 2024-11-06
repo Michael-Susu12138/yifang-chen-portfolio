@@ -1,0 +1,135 @@
+/* Ensure the app-container uses flexbox layout */
+.app-container {
+  display: flex;
+  flex-direction: row; /* Align sidebar and main content horizontally */
+  min-height: 100vh; /* Full height for the container */
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 250px; /* Fixed width for the sidebar */
+  flex-shrink: 0; /* Prevent the sidebar from shrinking */
+  margin: 30px;
+}
+
+/* Main content area */
+.main-content {
+  flex-grow: 1; /* Main content grows to take up remaining space */
+  padding: 40px;
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  margin: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
+  overflow: auto; /* Enable scrolling if content is too long */
+  height: 100vh;
+  /* min-height: calc(
+    100vh - 60px
+  ); Ensure the content adapts to the viewport height */
+}
+
+/* About section layout */
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 2.5em;
+  color: #fdf0d5;
+  margin-bottom: 10px;
+  display: inline-block;
+  border-bottom: 2px solid #780000;
+  padding-bottom: 5px;
+}
+
+.about-text p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+/* Profile image styling */
+.about-image {
+  margin-left: 40px;
+}
+
+.about-image img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Social links - grid layout for two rows */
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  gap: 20px; /* Space between items */
+  margin-top: 20px;
+}
+
+.social-item {
+  text-align: center;
+}
+
+.social-item a {
+  display: block;
+  color: #f0f0f0;
+  font-size: 2em;
+  transition: color 0.3s ease;
+}
+
+.social-item a:hover {
+  color: #780000;
+}
+
+.social-item span {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #f0f0f0;
+}
+
+/* Section titles */
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #fdf0d5;
+  border-bottom: 2px solid #780000;
+  padding-bottom: 5px;
+}
+
+/* Education and publications sections */
+.education-section,
+.paper-section {
+  margin-top: 40px;
+}
+
+.education-section ul,
+.paper-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.education-section li,
+.paper-section li {
+  background-color: #282828;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.education-section .date {
+  margin-right: 0;
+  font-size: 0.9em;
+  color: #cccccc;
+  font-style: italic;
+}

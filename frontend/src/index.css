@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #121212 !important; /* Setting a unified background color */
+  /* You can comment/uncomment the background-color below as per your design needs */
+  /* background-color: rgb(37, 36, 36) !important; */
+}
+
+#body-content {
+  height: 100vh;
+  width: 100vw;
+}
+
+.bg-content {
+  background-color: #353232;
+  border-radius: 2%;
+}
+
+/* Ensure the navbar stretches across the entire width */
+.navbar {
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  /* Remove the background-color property if you don't want the navbar to be black */
+}
+
+/* Override padding for the container within the navbar */
+.navbar .container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* Target the brand/logo specifically */
+.navbar-brand {
+  padding-left: 1rem;
+  /* Adjust the value as needed */
+}
+
+/* Adjust the space between nav items */
+.nav-link {
+  margin-right: 1.5rem;
+  /* Increase the margin as needed */
+  /* Add color styling if needed for nav links */
+}
+
+/* Ensure the nav collapses properly on smaller screens */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+}

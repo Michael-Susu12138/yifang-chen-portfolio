@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloock&display=swap");
+
+#body-content {
+  font-family: "Gloock", serif; /* Removed the '!' as it is invalid CSS syntax */
+  font-size: 3vh; /* Ensure this scales appropriately for your design */
+  color: #ffffff; /* This sets the default text color to white for all child elements */
+}
+
+#body-content,
+#body-content h1,
+#body-content h2,
+#body-content h3,
+#body-content h4,
+#body-content h5,
+#body-content h6 {
+  /* If you want the links to also be white */
+  color: white !important; /* Only use !important as a last resort */
+  padding: 1vh;
+}
+
+/* Center the body content and adjust the vertical positioning */
+.center-body {
+  position: absolute; /* Added for absolute positioning within the body-content */
+  top: 50%; /* Center vertically, adjust as needed */
+  left: 50%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Adjust the element's position to be truly centered */
+  text-align: center; /* Center-align the text */
+}
+
+.text-body {
+  margin-top: 10vh !important;
+}
+
+/* You can specify the color for spans directly */
+h3 span,
+h4 span {
+  color: #e7450a;
+}
+
+/* Social media icons list and alignment */
+.list-inline {
+  padding-left: 0; /* Remove padding if you want the icons to align with the text above */
+  /*text-align: center; /* Center-align the list items if they are not already */
+}
+
+.list-inline-item {
+  display: inline-block; /* This makes sure list items are in line */
+  margin: 0 10px; /* Add horizontal spacing between icons */
+}
+
+.list-inline-item a {
+  color: white; /* Set the default color for the icons */
+}
+
+.list-inline-item a:hover {
+  color: violet; /* Change the color on hover */
+  transition: all 0.2s ease-in-out; /* Smooth transition for hover effects */
+  transform: scale(1.2); /* Enlarge icons on hover */
+}
+
+.typed-words {
+  white-space: pre; /* To ensure that spaces and pauses during typing are respected */
+  border-right: 0.1em solid white; /* To simulate the text cursor */
+  display: inline-block; /* To prevent the span from taking full width */
+}
