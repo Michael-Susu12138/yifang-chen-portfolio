@@ -45,8 +45,10 @@ const Home = () => {
           </ul>
         </section>
         <section className="paper-section">
-          <h2>Projects</h2>
-          <ProjectList />
+          <h2>Papers</h2>
+          <PaperList></PaperList>
+          {/* <h2>Projects</h2>
+          <ProjectList /> */}
         </section>
       </main>
     </div>

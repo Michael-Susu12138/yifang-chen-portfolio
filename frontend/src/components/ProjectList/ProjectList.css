@@ -1,0 +1,6 @@
+/* project-list container styling */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Spacing between project cards */
+}
