@@ -60,7 +60,7 @@ const Sidebar = () => {
 
       <div className="social-links-bottom">
         <a
-          href="https://scholar.google.com/"
+          href="https://scholar.google.com/citations?user=vWzFVaYAAAAJ&hl=en"
           target="_blank"
           rel="noopener noreferrer"
           title="Google Scholar"
