@@ -20,7 +20,7 @@ const PaperList = () => {
       authors: "Yifang Chen, Xiaoyu Li, Yingyu Liang, Zhenmei Shi, Zhao Song.",
       submission: "Arxiv",
       year: 2024,
-      link: "https://arxiv.org/pdf/2412.06148",
+      link: "https://arxiv.org/abs/2412.06148",
     },
   ];
 
