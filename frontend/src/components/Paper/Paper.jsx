@@ -11,7 +11,7 @@ const Paper = ({ title, authors, submission, year, link }) => {
       </p>
       <p>
         <strong>Preprint:</strong> {submission}{" "}
-        {/* <span className="year">({year})</span> */}
+        <span className="year">({year})</span>
       </p>
       {link && (
         <p>

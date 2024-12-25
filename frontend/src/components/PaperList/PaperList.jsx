@@ -7,6 +7,15 @@ const PaperList = () => {
   const papers = [
     {
       title:
+        "Fast Gradient Computation for RoPE Attention in Almost Linear Time",
+      authors:
+        "Yifang Chen, Jiayan Huo, Xiaoyu Li, Yingyu Liang, Zhenmei Shi, Zhao Song.",
+      submission: "Arxiv",
+      year: 2024,
+      link: "https://arxiv.org/abs/2412.17316",
+    },
+    {
+      title:
         "The Computational Limits of State-Space Models and Mamba via the Lens of Circuit Complexity",
       authors: "Yifang Chen, Xiaoyu Li, Yingyu Liang, Zhenmei Shi, Zhao Song.",
       submission: "Arxiv",
