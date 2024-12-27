@@ -11,6 +11,8 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons"; // Icons for location, email, and phone
 
+import IpGlobe from "../IpGlobe/IpGlobe";
+
 import OfficialImage from "/assets/official-removebg-preview.png";
 import "./Sidebar.css";
 
@@ -55,7 +57,11 @@ const Sidebar = () => {
       </div>
 
       <div className="motto">
-        <p>"Innovation distinguishes between a leader and a follower."</p>
+        {/* <p>"Innovation distinguishes between a leader and a follower."</p> */}
+        {/* <IpGlobe></IpGlobe> */}
+        <a href="https://clustrmaps.com/site/1c3hi" title="ClustrMaps">
+          <img src="//www.clustrmaps.com/map_v2.png?d=MqSYHDjXgz0lKFdRxdOv4y4hnl1U8Ox1H8A-tf-ggEY&cl=ffffff" />
+        </a>
       </div>
 
       <div className="social-links-bottom">
