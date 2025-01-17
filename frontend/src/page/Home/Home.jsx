@@ -60,6 +60,20 @@ const Home = () => {
                 <span className="date">2020 - 2024</span>
               </div>
             </li>
+            <li className="education-item">
+              <img
+                src="/assets/nbps_icon.jpg"
+                alt="North Broward Preparatory School"
+                className="school-icon"
+              />
+              <div className="education-details">
+                <strong className="degree">
+                  North Broward Preparatory School
+                </strong>
+                <span className="school-name">High School</span>
+                <span className="date">2016 - 2020</span>
+              </div>
+            </li>
           </ul>
         </section>
 
