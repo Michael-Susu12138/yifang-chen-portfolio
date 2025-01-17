@@ -25,14 +25,15 @@
 
 /* Link styling */
 .paper a {
-  color: #780000; /* Accent color for the links */
+  /* color: #780000; Accent color for the links */
+  color: white;
   text-decoration: none; /* Remove underline from the links */
   transition: color 0.3s ease; /* Smooth transition on hover */
 }
 
 /* Hover effect for links */
 .paper a:hover {
-  color: #fdf0d5; /* Light color when hovering over links */
+  color: #e75e5e; /* Light color when hovering over links */
 }
 
 /* Hover effect for the paper container */

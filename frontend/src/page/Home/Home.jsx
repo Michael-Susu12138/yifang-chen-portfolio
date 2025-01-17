@@ -16,13 +16,13 @@ const Home = () => {
         <section className="about-section">
           <div className="about-content">
             <div className="about-text">
-              <h2>Yifang "Michael" Chen</h2>
+              <h2>Yifang Chen "陈奕方" </h2>
               <p>
-                I am Yifang "Michael" Chen, a student with a strong focus on
+                I am Yifang Chen "陈奕方", a student with a strong focus on
                 research in{" "}
                 <strong>
-                  LLM, Machine Learning Theory, Transformers, and Attention
-                  Mechanism.
+                  Large Language Models, Machine Learning Theory, Transformers,
+                  and Attention Mechanism.
                 </strong>
               </p>
             </div>
@@ -34,16 +34,35 @@ const Home = () => {
         <section className="education-section">
           <h2>Education</h2>
           <ul>
-            <li>
-              <strong>M.S. in Applied Data Science</strong>, University of
-              Chicago <span className="date">2024 - 2026</span>
+            <li className="education-item">
+              <img
+                src="/assets/uchicago_icon.png"
+                alt="University of Chicago"
+                className="school-icon"
+              />
+              <div className="education-details">
+                <strong className="degree">University of Chicago</strong>
+                <span className="school-name">
+                  M.S. in Applied Data Science
+                </span>
+                <span className="date">2024 - 2026</span>
+              </div>
             </li>
-            <li>
-              <strong>B.S. in Computer Science</strong>, New York University{" "}
-              <span className="date">2020 - 2024</span>
+            <li className="education-item">
+              <img
+                src="/assets/nyu_icon.png"
+                alt="New York University"
+                className="school-icon"
+              />
+              <div className="education-details">
+                <strong className="degree">New York University</strong>
+                <span className="school-name">B.S. in Computer Science</span>
+                <span className="date">2020 - 2024</span>
+              </div>
             </li>
           </ul>
         </section>
+
         <section className="paper-section">
           <h2>Papers</h2>
           <PaperList></PaperList>
