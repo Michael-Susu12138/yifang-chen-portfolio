@@ -5,6 +5,7 @@ import MyCard from "../../components/Card/MyCard";
 import PaperList from "../../components/PaperList/PaperList";
 import ProfileImage from "/assets/selfie.jpg"; // Image of yourself
 import ProjectList from "../../components/ProjectList/ProjectList";
+import PublicationList from "../../components/PublicationList/PublicationList";
 import "./Home.css";
 
 const Home = () => {
@@ -77,12 +78,14 @@ const Home = () => {
           </ul>
         </section>
 
-        <section className="paper-section">
-          <h2>Papers</h2>
+        {/* <section className="paper-section">
+          <h2>Publications:</h2>
+          <PublicationList></PublicationList>
+        </section> */}
+        {/* <section className="paper-section">
+          <h2>Manuscripts:</h2>
           <PaperList></PaperList>
-          {/* <h2>Projects</h2>
-          <ProjectList /> */}
-        </section>
+        </section> */}
       </main>
     </div>
   );
