@@ -42,7 +42,12 @@
 }
 
 .oral-highlight {
-  color: rgb(211, 11, 11);
+  color: red;
   font-size: 1.2em;
+  font-weight: bold;
+}
+
+.author-highlight {
+  color: rgb(210, 212, 54);
   font-weight: bold;
 }
