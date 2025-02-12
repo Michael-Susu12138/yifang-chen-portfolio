@@ -6,6 +6,8 @@ import PaperList from "../../components/PaperList/PaperList";
 import ProfileImage from "/assets/selfie.jpg"; // Image of yourself
 import ProjectList from "../../components/ProjectList/ProjectList";
 import PublicationList from "../../components/PublicationList/PublicationList";
+import News from "../../components/News/News";
+
 import "./Home.css";
 
 const Home = () => {
@@ -32,6 +34,7 @@ const Home = () => {
             </div>
           </div>
         </section>
+        {/* <News></News> */}
         <section className="education-section">
           <h2>Education</h2>
           <ul>

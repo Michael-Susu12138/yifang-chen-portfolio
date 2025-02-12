@@ -11,7 +11,7 @@ const PublicationList = () => {
       authors: "Yifang Chen, Xiaoyu Li, Yingyu Liang, Zhenmei Shi, Zhao Song.",
       submission: "Conference on Parsimony and Learning (CPAL 2025), Oral",
       year: 2025,
-      link: "https://arxiv.org/abs/2502.06167",
+      link: "https://arxiv.org/pdf/2412.06148v1",
     },
   ];
 
