@@ -3,23 +3,15 @@
 import React from "react";
 import Paper from "../Paper/Paper"; // Import the Paper component
 
-const PaperList = () => {
+const PublicationList = () => {
   const papers = [
     {
-      title: "Universal Approximation of Visual Autoregressive Transformers",
+      title:
+        "The Computational Limits of State-Space Models and Mamba via the Lens of Circuit Complexity",
       authors: "Yifang Chen, Xiaoyu Li, Yingyu Liang, Zhenmei Shi, Zhao Song.",
-      submission: "arXiv",
+      submission: "Conference on Parsimony and Learning (CPAL 2025), Oral",
       year: 2025,
       link: "https://arxiv.org/abs/2502.06167",
-    },
-    {
-      title:
-        "Fast Gradient Computation for RoPE Attention in Almost Linear Time",
-      authors:
-        "Yifang Chen, Jiayan Huo, Xiaoyu Li, Yingyu Liang, Zhenmei Shi, Zhao Song.",
-      submission: "arXiv",
-      year: 2024,
-      link: "https://arxiv.org/abs/2412.17316",
     },
   ];
 
@@ -31,7 +23,7 @@ const PaperList = () => {
           title={paper.title}
           authors={paper.authors}
           submission={paper.submission}
-          year={paper.year}
+          // year={paper.year}
           link={paper.link}
         />
       ))}
@@ -39,4 +31,4 @@ const PaperList = () => {
   );
 };
 
-export default PaperList;
+export default PublicationList;
