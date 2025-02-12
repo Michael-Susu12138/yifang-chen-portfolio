@@ -78,14 +78,14 @@ const Home = () => {
           </ul>
         </section>
 
-        {/* <section className="paper-section">
+        <section className="paper-section">
           <h2>Publications:</h2>
           <PublicationList></PublicationList>
-        </section> */}
-        {/* <section className="paper-section">
+        </section>
+        <section className="paper-section">
           <h2>Manuscripts:</h2>
           <PaperList></PaperList>
-        </section> */}
+        </section>
       </main>
     </div>
   );

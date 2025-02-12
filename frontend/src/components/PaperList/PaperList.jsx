@@ -8,7 +8,7 @@ const PaperList = () => {
     {
       title: "Universal Approximation of Visual Autoregressive Transformers",
       authors: "Yifang Chen, Xiaoyu Li, Yingyu Liang, Zhenmei Shi, Zhao Song.",
-      submission: "Arxiv",
+      submission: "arXiv",
       year: 2025,
       link: "https://arxiv.org/abs/2502.06167",
     },
@@ -17,7 +17,7 @@ const PaperList = () => {
         "Fast Gradient Computation for RoPE Attention in Almost Linear Time",
       authors:
         "Yifang Chen, Jiayan Huo, Xiaoyu Li, Yingyu Liang, Zhenmei Shi, Zhao Song.",
-      submission: "Arxiv",
+      submission: "arXiv",
       year: 2024,
       link: "https://arxiv.org/abs/2412.17316",
     },
