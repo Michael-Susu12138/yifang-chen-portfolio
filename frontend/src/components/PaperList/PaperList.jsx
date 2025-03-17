@@ -7,6 +7,15 @@ const PaperList = () => {
   const papers = [
     {
       title:
+        "Limits of KV Cache Compression for Tensor Attention based Autoregressive Transformers",
+      authors:
+        "Yifang Chen, Xiaoyu Li, Yingyu Liang, Zhenmei Shi, Zhao Song, Yu Tian",
+      submission: "arXiv",
+      year: 2025,
+      link: "https://arxiv.org/abs/2503.11108",
+    },
+    {
+      title:
         "Scaling Law Phenomena Across Regression Paradigms: Multiple and Kernel Approaches",
       authors:
         "Yifang Chen, Xuyang Guo, Xiaoyu Li, Yingyu Liang, Zhenmei Shi, Zhao Song.",
