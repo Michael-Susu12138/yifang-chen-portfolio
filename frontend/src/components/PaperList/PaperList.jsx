@@ -16,15 +16,6 @@ const PaperList = () => {
     },
     {
       title:
-        "Scaling Law Phenomena Across Regression Paradigms: Multiple and Kernel Approaches",
-      authors:
-        "Yifang Chen, Xuyang Guo, Xiaoyu Li, Yingyu Liang, Zhenmei Shi, Zhao Song.",
-      submission: "arXiv",
-      year: 2025,
-      link: "https://arxiv.org/abs/2503.01314",
-    },
-    {
-      title:
         "Fast Gradient Computation for RoPE Attention in Almost Linear Time",
       authors:
         "Yifang Chen, Jiayan Huo, Xiaoyu Li, Yingyu Liang, Zhenmei Shi, Zhao Song.",
