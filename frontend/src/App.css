@@ -1,0 +1,69 @@
+/* Global responsive styles */
+:root {
+  --background-color: #121212;
+  --text-color: #f0f0f0;
+  --accent-color: #780000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: "Inter", "Roboto", "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure accessibility for text links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Prevent image overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive typography */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+
+  /* Improve touch targets for mobile */
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Fix for iOS Safari viewport issues */
+@supports (-webkit-touch-callout: none) {
+  body,
+  html {
+    height: -webkit-fill-available;
+  }
+
+  .app-container {
+    min-height: -webkit-fill-available;
+  }
+}

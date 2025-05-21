@@ -12,6 +12,7 @@ const PublicationList = () => {
         "ICML 2025: Forty-Second International Conference on Machine Learning",
       year: 2025,
       link: "https://arxiv.org/abs/2502.06167",
+      image: "/assets/paper-thumbs/ml_theory.png", // Optional: Add path to thumbnail image
     },
     {
       title:
@@ -21,6 +22,7 @@ const PublicationList = () => {
         "CPAL 2025 (Oral): Second Conference on Parsimony and Learning",
       year: 2025,
       link: "https://openreview.net/forum?id=bImlLT3r62",
+      image: "/assets/paper-thumbs/mamba_tc0.jpg", // Optional: Add path to thumbnail image
     },
   ];
 
@@ -34,6 +36,7 @@ const PublicationList = () => {
           submission={paper.submission}
           // year={paper.year}
           link={paper.link}
+          image={paper.image} // Pass the optional image prop
         />
       ))}
     </div>

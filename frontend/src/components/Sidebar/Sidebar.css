@@ -134,3 +134,131 @@
   transform: translateY(-3px); /* Slight lift effect on hover */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
 }
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: auto;
+    height: 100%;
+    margin: 0;
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .profile .avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 10px;
+  }
+
+  .profile h2 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+  }
+
+  .description {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .research-interest {
+    font-size: 0.9em;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .contact-info-bottom {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-item {
+    margin: 8px 0;
+    width: 100%;
+    font-size: 0.9em;
+  }
+
+  .motto {
+    font-size: 0.9em;
+    padding: 8px 0;
+    margin: 15px 0;
+    width: 100%;
+  }
+
+  .motto img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .social-links-bottom {
+    padding: 10px 0;
+    gap: 25px;
+  }
+
+  .social-links-bottom a {
+    font-size: 1.5em;
+  }
+
+  .contact-me-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    display: block;
+    width: 80%;
+    margin: 15px auto;
+    text-align: center;
+  }
+}
+
+/* iPhone specific styles */
+@media screen and (max-width: 480px) {
+  .sidebar {
+    padding: 15px;
+  }
+
+  .profile .avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .profile h2 {
+    font-size: 1.3em;
+  }
+
+  .description {
+    font-size: 0.9em;
+  }
+
+  .research-interest {
+    font-size: 0.85em;
+    margin: 12px 0;
+  }
+
+  .contact-item {
+    font-size: 0.85em;
+  }
+
+  .contact-item .icon {
+    font-size: 1em;
+  }
+
+  .social-links-bottom {
+    gap: 20px;
+  }
+
+  .social-links-bottom a {
+    font-size: 1.4em;
+  }
+}

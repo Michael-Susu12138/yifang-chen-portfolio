@@ -1,87 +1,122 @@
-import React from "react";
+import React, { useState } from "react";
+import "./News.css";
 
-const News = () => [
-  {
-    date: "Feb 4, 2025",
-    title: "Northwestern-MML-Lab is seeking research collaborators/interns!",
-    description:
-      "More details here. If you’d like to work with me, plz drop an email. You may feel free to lead/join projects; we prefer strong coding, rapid learning skills, interdisciplinary expertise (STEM/other). We have interns with many (~10) pubs, but it's not required!",
-    link: "#",
-    highlight: true,
-  },
-  {
-    date: "Jan 27, 2025",
-    title:
-      "Introducing RAGEN -- the world’s first reproduction of DeepSeek-R1(Zero) methods for training agentic AI models!",
-    link: "#",
-  },
-  {
-    date: "Sep 20, 2024",
-    title:
-      "Glad to announce that ESFT has been accepted to the EMNLP 2024 Main Conference! 🎉",
-  },
-  {
-    date: "Jul 4, 2024",
-    title:
-      "Thrilled to introduce our latest project at DeepSeek, Expert-Specialized Fine-Tuning (ESFT) for efficient and effective LLM customization by leveraging the highly specialized Mixture-of-Experts (MoE) architecture!",
-  },
-  {
-    date: "Jun 2, 2024",
-    title:
-      "Grateful to be spotlighted by my alma mater RUC for my journey and achievements.",
-    link: "#",
-  },
-  {
-    date: "Feb 15, 2024",
-    title:
-      "Excited to join Northwestern as a PhD student! 🎓 Many thanks to my advisor Manling Li!",
-  },
-  {
-    date: "Oct 19, 2023",
-    title:
-      "Honored to be awarded the Baosteel Outstanding Student Award 2023 🏆 as the ONLY undergrad student among science and technology departments in RUC! Special thanks to NLPR lab! 🙏",
-  },
-  {
-    date: "Jun 7, 2023",
-    title:
-      "Excited to share that I'll be joining UIUC Blender Lab 🧪 this summer as a student researcher!",
-  },
-  {
-    date: "Dec 12, 2022",
-    title:
-      "I posted an article introducing ChatGPT on Capital of Statistics 💡. Do not miss it if you want to know more about ChatGPT!",
-    link: "#",
-  },
-];
+const News = () => {
+  const [expanded, setExpanded] = useState(false);
 
-const NewsSection = () => {
-  return (
-    <div className="max-w-2xl mx-auto p-6 bg-white shadow-lg rounded-xl">
-      <h2 className="text-2xl font-bold mb-4">📢 News</h2>
-      <ul className="space-y-4">
-        {newsItems.map((news, index) => (
-          <li
-            key={index}
-            className={`p-4 rounded-lg border ${
-              news.highlight
-                ? "bg-red-100 border-red-400"
-                : "bg-gray-100 border-gray-300"
-            }`}
+  // Sample news data - you can replace this with your actual achievements
+  const newsItems = [
+    {
+      id: 1,
+      date: "May 2025",
+      title: "Universal Approximation of VAR accepted at ICML 2025",
+      description:
+        "My paper on Universal Approximation of VAR was accepted at ICML 2025, here is the publication link: https://arxiv.org/abs/2502.06167",
+      tag: "Research",
+      link: "https://arxiv.org/abs/2502.06167",
+    },
+    {
+      id: 2,
+      date: "May 2025",
+      title: "Attend the CPAL 2025 conference at Stanford University",
+      description:
+        "I attended the CPAL 2025 conference at Stanford University, here is the conference link: https://cpal.cc/",
+      tag: "Research",
+      link: "https://cpal.cc/",
+    },
+    {
+      id: 3,
+      date: "January 2025",
+      title: "Mamba paper accepted at CPAL Oral 2025",
+      description:
+        "My paper on Mamba was accepted at the CPAL Oral 2025, here is the publication link: https://openreview.net/forum?id=bImlLT3r62",
+      tag: "Research",
+      link: "https://openreview.net/forum?id=bImlLT3r62",
+    },
+    {
+      id: 4,
+      date: "September 2024",
+      title: "Started M.S. at University of Chicago",
+      description:
+        "Began graduate studies in Applied Data Science at the University of Chicago.",
+      tag: "Education",
+    },
+    {
+      id: 5,
+      date: "May 2024",
+      title: "Bachelor's Degree in Computer Science from New York University",
+      description:
+        "I graduated from New York University with a B.S. in Computer Science.",
+      tag: "Education",
+    },
+  ];
+
+  // Function to render description with clickable links
+  const renderDescription = (description, link) => {
+    if (link) {
+      // Extract the link text from the description
+      const linkText = description.substring(
+        description.indexOf("http"),
+        description.length
+      );
+      const textBeforeLink = description.substring(
+        0,
+        description.indexOf("http")
+      );
+
+      return (
+        <>
+          {textBeforeLink}
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="news-link"
           >
-            <span className="font-semibold text-gray-700">{news.date} - </span>
-            {news.link ? (
-              <a
-                href={news.link}
-                className="text-blue-600 hover:underline font-medium"
-              >
-                {news.title}
-              </a>
-            ) : (
-              <span className="text-gray-800">{news.title}</span>
-            )}
-          </li>
+            {linkText}
+          </a>
+        </>
+      );
+    }
+    return description;
+  };
+
+  // Display all items if expanded, otherwise only show the first 3
+  const displayedItems = expanded ? newsItems : newsItems.slice(0, 3);
+
+  return (
+    <div className="news-container">
+      <div className="news-timeline">
+        {displayedItems.map((item, index) => (
+          <div
+            className="news-item"
+            key={item.id}
+            style={{ "--item-index": index }}
+          >
+            <div className="news-meta">
+              <span className="news-date">{item.date}</span>
+              <span className={`news-tag ${item.tag.toLowerCase()}`}>
+                {item.tag}
+              </span>
+            </div>
+            <div className="news-content">
+              <h3>{item.title}</h3>
+              <p>{renderDescription(item.description, item.link)}</p>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
+
+      {newsItems.length > 3 && (
+        <div className="news-toggle-container">
+          <button
+            className="news-toggle-btn"
+            onClick={() => setExpanded(!expanded)}
+          >
+            {expanded ? "Show Less" : "View All"}
+          </button>
+        </div>
+      )}
     </div>
   );
 };

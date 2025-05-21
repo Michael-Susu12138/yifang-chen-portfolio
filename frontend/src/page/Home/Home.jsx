@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import ParticlesComponent from "../../components/ParticlesComponent/ParticlesComponent";
 import MyCard from "../../components/Card/MyCard";
@@ -7,14 +7,66 @@ import ProfileImage from "/assets/selfie.jpg"; // Image of yourself
 import ProjectList from "../../components/ProjectList/ProjectList";
 import PublicationList from "../../components/PublicationList/PublicationList";
 import News from "../../components/News/News";
+import Interests from "../../components/Interests/Interests";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 import "./Home.css";
 
 const Home = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if viewport is mobile
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+      // Auto-close sidebar on mobile
+      if (window.innerWidth <= 768) {
+        setSidebarOpen(false);
+      } else {
+        setSidebarOpen(true);
+      }
+    };
+
+    // Initial check
+    checkIsMobile();
+
+    // Add listener for window resize
+    window.addEventListener("resize", checkIsMobile);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   return (
-    <div className="app-container">
+    <div
+      className={`app-container ${
+        sidebarOpen ? "sidebar-open" : "sidebar-closed"
+      }`}
+    >
       <ParticlesComponent />
-      <Sidebar />
+
+      {/* Mobile sidebar toggle button */}
+      {isMobile && (
+        <button className="sidebar-toggle-btn" onClick={toggleSidebar}>
+          <FontAwesomeIcon icon={sidebarOpen ? faTimes : faBars} />
+        </button>
+      )}
+
+      {/* Overlay when sidebar is open on mobile */}
+      {isMobile && sidebarOpen && (
+        <div className="sidebar-overlay" onClick={toggleSidebar}></div>
+      )}
+
+      <div className={`sidebar-container ${sidebarOpen ? "open" : "closed"}`}>
+        <Sidebar />
+      </div>
+
       <main className="main-content">
         <section className="about-section">
           <div className="about-content">
@@ -34,7 +86,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        {/* <News></News> */}
+
         <section className="education-section">
           <h2>Education</h2>
           <ul>
@@ -49,7 +101,7 @@ const Home = () => {
                 <span className="school-name">
                   M.S. in Applied Data Science
                 </span>
-                <span className="date">2024 - 2026</span>
+                <span className="date">2024 - Present</span>
               </div>
             </li>
             <li className="education-item">
@@ -81,6 +133,11 @@ const Home = () => {
           </ul>
         </section>
 
+        <section className="news-section">
+          <h2>News</h2>
+          <News />
+        </section>
+
         <section className="paper-section">
           <h2>Publications:</h2>
           <PublicationList></PublicationList>
@@ -88,6 +145,11 @@ const Home = () => {
         <section className="paper-section">
           <h2>Manuscripts:</h2>
           <PaperList></PaperList>
+        </section>
+
+        <section className="interests-section">
+          <h2>Misc. Interests</h2>
+          <Interests />
         </section>
       </main>
     </div>

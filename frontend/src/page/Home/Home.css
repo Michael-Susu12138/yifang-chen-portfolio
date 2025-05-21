@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: row; /* Align sidebar and main content horizontally */
   min-height: 100vh; /* Full height for the container */
+  position: relative; /* For positioning the toggle button */
 }
 
 /* Sidebar styling */
@@ -62,7 +63,7 @@
 }
 
 .about-image img {
-  width: 300px;
+  width: 400px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -134,25 +135,41 @@ h2 {
   font-style: italic;
 }
 
+/* Education section - updated for a more compact, elegant design */
+.education-section {
+  margin-top: 40px;
+}
+
 .education-section ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
   list-style: none;
-  padding-left: 0;
 }
 
 .education-item {
+  flex: 1 1 calc(33.333% - 15px);
+  min-width: 250px;
+  background: linear-gradient(145deg, #272727, #2d2d2d);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-left: 3px solid #780000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   align-items: center;
-  background-color: #282828;
-  padding: 10px;
-  border-radius: 6px;
-  margin-bottom: 10px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.education-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .school-icon {
-  width: 40px; /* Reduced icon size */
-  height: 40px;
-  margin-right: 10px;
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -165,19 +182,230 @@ h2 {
 }
 
 .degree {
-  font-size: 1.2em; /* Reduced font size */
+  font-size: 1em;
+  font-weight: 600;
   color: #fdf0d5;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 
 .school-name {
-  font-size: 1em; /* Reduced font size */
+  font-size: 0.9em;
   color: #cccccc;
 }
 
 .date {
-  font-size: 0.9em; /* Reduced font size */
+  font-size: 0.8em;
   color: #aaaaaa;
   font-style: italic;
-  margin-top: 3px;
+  margin-top: 2px;
+}
+
+/* News section */
+.news-section {
+  margin-top: 40px;
+}
+
+.news-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #fdf0d5;
+  border-bottom: 2px solid #780000;
+  padding-bottom: 5px;
+}
+
+/* Interests section */
+.interests-section {
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.interests-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #fdf0d5;
+  border-bottom: 2px solid #780000;
+  padding-bottom: 5px;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+  background-color: #780000;
+  color: #fdf0d5;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.sidebar-toggle-btn:hover {
+  background-color: #a80000;
+  transform: scale(1.05);
+}
+
+.sidebar-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+/* Sidebar container */
+.sidebar-container {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Sidebar overlay */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 998;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  /* Sidebar toggle animation for mobile */
+  .sidebar-container.closed {
+    transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .sidebar-container.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 80%;
+    max-width: 300px;
+    z-index: 999;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    border-radius: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  /* Adjust main content when sidebar is open */
+  .sidebar-open .main-content {
+    margin-top: 60px; /* Space for the toggle button */
+  }
+
+  .sidebar-closed .main-content {
+    margin-top: 60px; /* Space for the toggle button */
+  }
+
+  .main-content {
+    margin: 60px 15px 15px;
+    padding: 20px;
+    height: auto;
+    overflow: visible;
+  }
+
+  /* About section mobile styling */
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-image {
+    margin-left: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 280px;
+  }
+
+  .about-text h2 {
+    font-size: 2em;
+  }
+
+  .about-text p {
+    font-size: 1em;
+  }
+
+  /* Education section mobile styling */
+  .education-section ul {
+    display: block;
+  }
+
+  .education-item {
+    margin-bottom: 15px;
+    min-width: auto;
+  }
+
+  /* Section titles */
+  h2 {
+    font-size: 1.5em;
+  }
+}
+
+/* iPhone specific styles (smaller screens) */
+@media screen and (max-width: 480px) {
+  .sidebar-toggle-btn {
+    width: 36px;
+    height: 36px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .main-content {
+    padding: 15px;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .sidebar {
+    width: 85%;
+  }
+
+  .about-text h2 {
+    font-size: 1.8em;
+  }
+
+  .about-image img {
+    width: 240px;
+  }
+
+  .education-section .degree {
+    font-size: 0.9em;
+  }
 }
