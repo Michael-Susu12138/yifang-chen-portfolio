@@ -1,7 +1,7 @@
 import React from "react";
 import "./Paper.css";
 
-const Paper = ({ title, authors, submission, year, link }) => {
+const Paper = ({ title, authors, submission, year, link, image }) => {
   console.log(submission);
 
   // Highlight "Oral" in the submission
@@ -17,28 +17,35 @@ const Paper = ({ title, authors, submission, year, link }) => {
   );
 
   return (
-    <div className="paper">
-      <h3>{title}</h3>
-      <p>
-        <strong>Authors:</strong>{" "}
-        <span dangerouslySetInnerHTML={{ __html: formattedAuthors }} />
-      </p>
-      <p>
-        <strong>
-          {submission.startsWith("arXiv") ? "Preprint:" : "Publication:"}
-        </strong>{" "}
-        <span dangerouslySetInnerHTML={{ __html: formattedSubmission }} />
-        {submission.startsWith("arXiv") && (
-          <span className="year">({year})</span>
-        )}
-      </p>
-      {link && (
-        <p>
-          <a href={link} target="_blank" rel="noopener noreferrer">
-            View Paper
-          </a>
-        </p>
+    <div className={`paper ${image ? "with-image" : ""}`}>
+      {image && (
+        <div className="paper-image">
+          <img src={image} alt={`Thumbnail for ${title}`} />
+        </div>
       )}
+      <div className="paper-content">
+        <h3>{title}</h3>
+        <p>
+          <strong>Authors:</strong>{" "}
+          <span dangerouslySetInnerHTML={{ __html: formattedAuthors }} />
+        </p>
+        <p>
+          <strong>
+            {submission.startsWith("arXiv") ? "Preprint:" : "Publication:"}
+          </strong>{" "}
+          <span dangerouslySetInnerHTML={{ __html: formattedSubmission }} />
+          {submission.startsWith("arXiv") && (
+            <span className="year">({year})</span>
+          )}
+        </p>
+        {link && (
+          <p>
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              View Paper
+            </a>
+          </p>
+        )}
+      </div>
     </div>
   );
 };

@@ -1,0 +1,253 @@
+.news-container {
+  margin: 20px 0;
+  padding: 10px 0;
+}
+
+.news-timeline {
+  position: relative;
+  padding-left: 20px;
+}
+
+.news-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(120, 0, 0, 0.8) 0%,
+    rgba(120, 0, 0, 0.4) 100%
+  );
+  border-radius: 1px;
+}
+
+.news-item {
+  position: relative;
+  padding: 15px;
+  margin-bottom: 15px;
+  background: linear-gradient(145deg, #272727, #2d2d2d);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-left: 3px solid #780000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.4s ease,
+    max-height 0.4s ease;
+  opacity: 1;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.news-item::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #780000;
+  box-shadow: 0 0 0 3px rgba(120, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.news-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.news-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.news-date {
+  font-size: 0.8em;
+  color: #aaaaaa;
+  font-style: italic;
+}
+
+.news-tag {
+  font-size: 0.7em;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.news-tag.education {
+  background-color: rgba(72, 61, 139, 0.3);
+  color: #a29bfe;
+}
+
+.news-tag.research {
+  background-color: rgba(39, 174, 96, 0.3);
+  color: #6fcf97;
+}
+
+.news-tag.project {
+  background-color: rgba(41, 128, 185, 0.3);
+  color: #74b9ff;
+}
+
+.news-content h3 {
+  font-size: 1.1em;
+  color: #fdf0d5;
+  margin-bottom: 5px;
+  border-bottom: none;
+}
+
+.news-content p {
+  font-size: 0.9em;
+  color: #cccccc;
+  line-height: 1.4;
+}
+
+.news-link {
+  color: #ff9e64;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.news-link:hover {
+  color: #ff7e3f;
+  text-decoration: underline;
+}
+
+.news-link::after {
+  content: "↗";
+  display: inline-block;
+  margin-left: 3px;
+  font-size: 0.8em;
+  transform: translateY(-2px);
+}
+
+/* Toggle button styles */
+.news-toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.news-toggle-container::before {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(120, 0, 0, 0.3) 20%,
+    rgba(120, 0, 0, 0.3) 80%,
+    transparent 100%
+  );
+  z-index: 0;
+}
+
+.news-toggle-btn {
+  background: linear-gradient(145deg, #2d2d2d, #272727);
+  color: #fdf0d5;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 20px;
+  font-size: 0.85em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+  border-left: 2px solid #780000;
+  border-right: 2px solid #780000;
+}
+
+.news-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(145deg, #323232, #2a2a2a);
+}
+
+.news-toggle-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.news-item {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: calc(0.1s * var(--item-index, 0));
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .news-container {
+    margin: 15px 0;
+  }
+
+  .news-timeline {
+    padding-left: 15px;
+  }
+
+  .news-item {
+    padding: 12px;
+  }
+
+  .news-item::before {
+    left: -19px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .news-content h3 {
+    font-size: 1em;
+  }
+
+  .news-content p {
+    font-size: 0.85em;
+  }
+
+  .news-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .news-tag {
+    margin-top: 5px;
+  }
+}
+
+/* iPhone specific styles */
+@media screen and (max-width: 480px) {
+  .news-timeline::before {
+    left: 0;
+  }
+
+  .news-item {
+    margin-bottom: 12px;
+    padding: 10px;
+  }
+
+  .news-toggle-btn {
+    padding: 5px 15px;
+    font-size: 0.8em;
+  }
+}
