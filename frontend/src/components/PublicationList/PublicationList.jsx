@@ -6,13 +6,14 @@ import Paper from "../Paper/Paper"; // Import the Paper component
 const PublicationList = () => {
   const papers = [
     {
-      title: "Universal Approximation of Visual Autoregressive Transformers",
+      title:
+        "Fundamental Limits of Visual Autoregressive Transformers: Universal Approximation Abilities",
       authors: "Yifang Chen, Xiaoyu Li, Yingyu Liang, Zhenmei Shi, Zhao Song.",
       submission:
         "ICML 2025: Forty-Second International Conference on Machine Learning",
       year: 2025,
-      link: "https://arxiv.org/abs/2502.06167",
-      image: "/assets/paper-thumbs/ml_theory.png", // Optional: Add path to thumbnail image
+      link: "https://openreview.net/pdf?id=magOSIm8UT",
+      image: "/assets/paper-thumbs/var_universality.png", // Optional: Add path to thumbnail image
     },
     {
       title:
