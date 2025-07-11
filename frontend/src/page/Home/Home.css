@@ -1,9 +1,17 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #121212;
+}
+
 /* Ensure the app-container uses flexbox layout */
 .app-container {
   display: flex;
   flex-direction: row; /* Align sidebar and main content horizontally */
-  min-height: 100vh; /* Full height for the container */
+  min-height: calc(100vh - 70px); /* Full height minus navigation height */
   position: relative; /* For positioning the toggle button */
+  flex: 1;
 }
 
 /* Sidebar styling */
