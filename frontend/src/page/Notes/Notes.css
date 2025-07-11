@@ -1,0 +1,242 @@
+.notes-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.notes-content {
+  display: flex;
+  flex: 1;
+  margin: 20px;
+  gap: 20px;
+  overflow: hidden;
+}
+
+/* Sidebar styling */
+.notes-sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.notes-search {
+  padding: 15px;
+  border-bottom: 1px solid #333;
+}
+
+.notes-search input {
+  width: 100%;
+  padding: 10px;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: #f0f0f0;
+  font-size: 0.9rem;
+}
+
+.notes-search input:focus {
+  outline: none;
+  border-color: #780000;
+}
+
+.notes-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.note-item {
+  padding: 12px;
+  margin-bottom: 8px;
+  background-color: #282828;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.note-item.selected {
+  background-color: #323232;
+  border-left: 3px solid #780000;
+}
+
+.note-item:hover {
+  background-color: #323232;
+}
+
+.note-item h3 {
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+  color: #fdf0d5;
+}
+
+.note-date {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* Note display area */
+.note-display {
+  flex: 1;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
+  overflow-y: auto;
+}
+
+.markdown-content h2 {
+  margin-top: 0;
+  color: #fdf0d5;
+  border-bottom: 2px solid #780000;
+  padding-bottom: 8px;
+  margin-bottom: 5px;
+}
+
+.date-display {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+  font-style: italic;
+}
+
+/* Markdown styling */
+.markdown-content {
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  color: #fdf0d5;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+.markdown-content h1 {
+  font-size: 1.8em;
+  border-bottom: 2px solid #555;
+  padding-bottom: 0.3em;
+}
+
+.markdown-content h2 {
+  font-size: 1.5em;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.3em;
+}
+
+.markdown-content h3 {
+  font-size: 1.3em;
+}
+
+.markdown-content p {
+  margin: 1em 0;
+}
+
+.markdown-content a {
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.markdown-content a:hover {
+  text-decoration: underline;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  padding-left: 2em;
+  margin: 1em 0;
+}
+
+.markdown-content li {
+  margin: 0.5em 0;
+}
+
+.markdown-content blockquote {
+  border-left: 4px solid #444;
+  padding-left: 1em;
+  margin: 1em 0;
+  color: #aaa;
+}
+
+.markdown-content code {
+  font-family: "Courier New", Courier, monospace;
+  padding: 0.2em 0.4em;
+  background-color: #2a2a2a;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.markdown-content pre {
+  background-color: #282c34;
+  border-radius: 5px;
+  padding: 1em;
+  overflow-x: auto;
+}
+
+.markdown-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.markdown-content table th,
+.markdown-content table td {
+  border: 1px solid #444;
+  padding: 0.5em;
+  text-align: left;
+}
+
+.markdown-content table th {
+  background-color: #333;
+}
+
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #777;
+  font-style: italic;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .notes-content {
+    flex-direction: column;
+  }
+
+  .notes-sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .notes-content {
+    margin: 10px;
+  }
+
+  .note-display {
+    padding: 15px;
+  }
+}
