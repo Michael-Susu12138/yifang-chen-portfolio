@@ -89,6 +89,28 @@ const Home = () => {
                 <img src={ProfileImage} alt="Yifang 'Michael' Chen" />
               </div>
             </div>
+            <div className="github-note">
+              <p>
+                Enjoying this site? If you find it helpful or inspiring,{" "}
+                <a
+                  href="https://github.com/Michael-Susu12138/yifang-chen-portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  consider giving it a star on GitHub ⭐
+                </a>
+                . Feel free to{" "}
+                <a
+                  href="https://github.com/Michael-Susu12138/yifang-chen-portfolio/fork"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  fork it
+                </a>{" "}
+                if you'd like to build your own version — and a little credit is
+                always appreciated!
+              </p>
+            </div>
           </section>
 
           <section className="education-section">
