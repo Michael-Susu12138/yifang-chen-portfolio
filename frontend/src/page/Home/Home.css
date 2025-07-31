@@ -290,6 +290,28 @@ h2 {
   }
 }
 
+.github-note {
+  font-size: 0.75em;
+  color: #888888;
+  text-align: center;
+  margin-top: 60px;
+  padding: 12px;
+  border-top: 1px solid #333333;
+  font-style: normal;
+}
+
+.github-note a {
+  color: #fdf0d5;
+  font-weight: 500;
+  text-decoration: underline dotted;
+  transition: color 0.3s ease;
+}
+
+.github-note a:hover {
+  color: #ff4c4c;
+  text-decoration: underline;
+}
+
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
   .app-container {
