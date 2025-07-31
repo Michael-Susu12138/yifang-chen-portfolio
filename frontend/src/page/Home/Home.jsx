@@ -107,7 +107,7 @@ const Home = () => {
                 >
                   fork it
                 </a>{" "}
-                if you'd like to build your own version — and a little credit is
+                if you'd like to build your own version — and a little credit is always appreciated.
               </p>
             </div>
           </section>
