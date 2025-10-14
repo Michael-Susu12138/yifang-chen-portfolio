@@ -6,6 +6,7 @@ import PaperList from "../../components/PaperList/PaperList";
 import ProfileImage from "/assets/selfie.jpg"; // Image of yourself
 import ProjectList from "../../components/ProjectList/ProjectList";
 import PublicationList from "../../components/PublicationList/PublicationList";
+import WorkshopList from "../../components/WorkshopList/WorkshopList";
 import News from "../../components/News/News";
 import Interests from "../../components/Interests/Interests";
 import Navigation from "../../components/Navigation/Navigation";
@@ -168,6 +169,34 @@ const Home = () => {
             <h2>Publications:</h2>
             <PublicationList></PublicationList>
           </section>
+
+          <section className="workshop-section">
+            <h2>Workshops:</h2>
+            <WorkshopList />
+          </section>
+
+          <section className="service-section">
+            <h2>Academic Services:</h2>
+            <ul className="service-list">
+              <li className="service-item">
+                <strong>Reviewer</strong>
+                <div className="service-tags">
+                  <span className="service-tag">ICLR 2026</span>
+                  <span className="service-tag">NeurIPS 2025 @ WCTD</span>
+                </div>
+              </li>
+              <li className="service-item">
+                <strong>Teaching Assistant</strong>
+                <div className="service-tags">
+                  <span className="service-tag">
+                    CS-UY 2214: Computer Architecture and Organization
+                  </span>{" "}
+                  @ New York University
+                </div>
+              </li>
+            </ul>
+          </section>
+
           <section className="paper-section">
             <h2>Manuscripts:</h2>
             <PaperList></PaperList>

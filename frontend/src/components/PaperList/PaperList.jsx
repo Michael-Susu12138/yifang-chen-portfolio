@@ -15,16 +15,6 @@ const PaperList = () => {
       link: "https://arxiv.org/abs/2503.11108",
       image: "/assets/paper-thumbs/kv_cache.jpg", // Optional: Add path to thumbnail image
     },
-    {
-      title:
-        "Fast Gradient Computation for RoPE Attention in Almost Linear Time",
-      authors:
-        "Yifang Chen, Jiayan Huo, Xiaoyu Li, Yingyu Liang, Zhenmei Shi, Zhao Song.",
-      submission: "ICLR SCOPE Workshop 2025",
-      year: 2025,
-      link: "https://arxiv.org/abs/2412.17316",
-      image: "/assets/paper-thumbs/ml_theory.png", // Optional: Add path to thumbnail image
-    },
   ];
 
   return (

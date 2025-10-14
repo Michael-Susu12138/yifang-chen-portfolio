@@ -221,6 +221,73 @@ h2 {
   padding-bottom: 5px;
 }
 
+/* Workshop section */
+.workshop-section {
+  margin-top: 40px;
+  color: white;
+}
+
+.workshop-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: white;
+  border-bottom: 2px solid #780000;
+  padding-bottom: 5px;
+}
+
+/* Service section */
+.service-section {
+  margin-top: 40px;
+}
+
+.service-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: white;
+  border-bottom: 2px solid #780000;
+  padding-bottom: 5px;
+}
+
+.service-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.service-item {
+  background-color: #282828;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border-left: 3px solid #780000;
+}
+
+.service-tags {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.service-tag {
+  background-color: #780000;
+  color: #fdf0d5;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: 500;
+  border: 1px solid #a80000;
+}
+
+.service-tag:nth-child(2) {
+  background-color: #1e40af;
+  border-color: #3b82f6;
+}
+
+.service-tag:nth-child(3) {
+  background-color: #059669;
+  border-color: #10b981;
+}
+
 /* Interests section */
 .interests-section {
   margin-top: 40px;
