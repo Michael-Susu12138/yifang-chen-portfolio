@@ -16,7 +16,6 @@ export default defineConfig({
             "tsparticles",
           ],
           icons: ["@fortawesome/react-fontawesome", "react-icons"],
-          markdown: ["react-markdown", "react-syntax-highlighter"],
         },
       },
     },
