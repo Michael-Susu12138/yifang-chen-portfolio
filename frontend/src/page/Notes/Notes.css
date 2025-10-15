@@ -178,6 +178,8 @@
   background-color: #2a2a2a;
   border-radius: 3px;
   font-size: 0.9em;
+  color: #f0f0f0;
+  border: 1px solid #444;
 }
 
 .markdown-content pre {
@@ -185,6 +187,8 @@
   border-radius: 5px;
   padding: 1em;
   overflow-x: auto;
+  border: 1px solid #444;
+  margin: 1em 0;
 }
 
 .markdown-content table {
@@ -216,6 +220,43 @@
   height: 100%;
   color: #777;
   font-style: italic;
+}
+
+.loading-state,
+.error-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #f0f0f0;
+  font-size: 1.2rem;
+}
+
+.error-state {
+  color: #e75e5e;
+}
+
+.note-description {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+.note-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.note-tag {
+  background-color: #333;
+  color: #61dafb;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
 }
 
 /* Mobile responsiveness */

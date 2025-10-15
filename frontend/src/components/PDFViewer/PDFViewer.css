@@ -1,0 +1,104 @@
+/* PDF Viewer Styles */
+.pdf-viewer {
+  width: 100%;
+  height: calc(100vh - 200px); /* Full height minus header space */
+  display: flex;
+  flex-direction: column;
+  background-color: #1e1e1e; /* Match note-display background */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Match note-display shadow */
+  border: 1px solid #333; /* Match sidebar border */
+  margin: 0;
+  padding: 0;
+}
+
+/* Reset any default margins/padding for PDF content */
+.pdf-viewer * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pdf-header {
+  background-color: #1e1e1e; /* Match note-display background */
+  padding: 15px 20px;
+  border-bottom: 1px solid #333;
+  flex-shrink: 0;
+}
+
+.pdf-header h3 {
+  margin: 0;
+  color: #fdf0d5; /* Match markdown heading color */
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.pdf-container {
+  flex: 1;
+  position: relative;
+  height: calc(100vh - 280px); /* Full height minus header and navigation */
+  background-color: white; /* Normal PDF background */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  line-height: 0;
+}
+
+.pdf-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: white; /* Normal PDF background */
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+/* Normal PDF scrollbar styling */
+.pdf-iframe::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pdf-iframe::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.pdf-iframe::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.pdf-iframe::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .pdf-viewer {
+    height: calc(100vh - 150px);
+  }
+
+  .pdf-container {
+    height: calc(100vh - 200px);
+  }
+
+  .pdf-header {
+    padding: 10px 15px;
+  }
+
+  .pdf-header h3 {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdf-viewer {
+    height: calc(100vh - 120px);
+  }
+
+  .pdf-container {
+    height: calc(100vh - 160px);
+  }
+}

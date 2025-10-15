@@ -1,0 +1,141 @@
+/* Workshop.css */
+
+/* Main container for each workshop */
+.workshop {
+  background-color: #282828; /* Dark background for the workshop card */
+  padding: 15px; /* Padding around the content */
+  border-radius: 10px; /* Rounded corners */
+  margin-bottom: 20px; /* Spacing between workshops */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Workshop with image layout */
+.workshop.with-image {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 20px;
+  padding: 18px;
+}
+
+/* Image container */
+.workshop-image {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.workshop-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Content section */
+.workshop-content {
+  flex: 1;
+  padding-right: 5px;
+}
+
+/* Workshop title styling */
+.workshop h3 {
+  font-size: 1.3em; /* Adjusted font size */
+  margin-bottom: 10px; /* Spacing between title and other details */
+  color: #fdf0d5; /* Light, subtle color for the title */
+}
+
+/* General text styling for workshop details */
+.workshop p {
+  color: #cccccc; /* Light gray for workshop details */
+  font-size: 1em; /* Standard font size */
+  margin: 5px 0; /* Spacing between details */
+}
+
+/* Link styling */
+.workshop a {
+  color: white;
+  text-decoration: none; /* Remove underline from the links */
+  transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect for links */
+.workshop a:hover {
+  color: #e75e5e; /* Light color when hovering over links */
+}
+
+/* Hover effect for the workshop container */
+.workshop:hover {
+  background-color: #333; /* Darker background on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Image zoom effect on hover */
+.workshop:hover .workshop-image img {
+  transform: scale(1.05);
+}
+
+.author-highlight {
+  color: rgb(210, 212, 54);
+  font-weight: bold;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .workshop {
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+
+  .workshop.with-image {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .workshop-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .workshop h3 {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+  }
+
+  .workshop p {
+    font-size: 0.9em;
+  }
+}
+
+/* iPhone specific styles */
+@media screen and (max-width: 480px) {
+  .workshop {
+    padding: 10px;
+    margin-bottom: 12px;
+  }
+
+  .workshop.with-image {
+    gap: 12px;
+    padding: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .workshop-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    margin-bottom: 10px;
+  }
+
+  .workshop h3 {
+    font-size: 1em;
+  }
+
+  .workshop p {
+    font-size: 0.85em;
+  }
+}
