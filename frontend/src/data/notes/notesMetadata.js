@@ -3,6 +3,19 @@
 
 export const notesMetadata = [
   {
+    id: "transformer-cot-expressivness-pdf",
+    title: "The expressivness of Transformer with CoT",
+    date: "2025-11-27",
+    description:
+      "This is the note for the papers 'The expressivness of Transformer with CoT'.",
+    url: "/notes/transformer_expressivness_cot.pdf",
+    tags: [
+      "formal-languages",
+      "theoretical-computer-science",
+      "large-language-models",
+    ],
+  },
+  {
     id: "formal-language-pdf",
     title: "Formal Language Theory",
     date: "2025-10-14",
