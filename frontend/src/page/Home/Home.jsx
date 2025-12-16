@@ -76,15 +76,57 @@ const Home = () => {
           <section className="about-section">
             <div className="about-content">
               <div className="about-text">
-                <h2>Yifang Chen "陈奕方" </h2>
+                <h2>Yifang Chen "陈奕方"</h2>
                 <p>
-                  I am Yifang Chen "陈奕方", a student with a strong focus on
-                  research in{" "}
+                  I am <strong>Yifang Chen "陈奕方"</strong>, a researcher with
+                  a strong focus on{" "}
                   <strong>
-                    Large Language Models, Machine Learning Theory,
-                    Transformers, and Attention Mechanism.
+                    Machine Learning Theory, Expressiveness and Learnability of
+                    Large Language Models (LLMs), and Efficient LLMs
                   </strong>
+                  .
                 </p>
+                <div className="research-affiliation">
+                  <p>
+                    I am currently a Research Intern at{" "}
+                    <a
+                      href="https://www.mll.lab.northwestern.edu/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="affiliation-link"
+                    >
+                      MLL Lab
+                    </a>
+                    , where I am fortunate to collaborate with{" "}
+                    <a
+                      href="https://limanling.github.io/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="collab-link"
+                    >
+                      Prof. Manling Li
+                    </a>
+                    ,{" "}
+                    <a
+                      href="https://2prime.github.io/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="collab-link"
+                    >
+                      Prof. Yiping Lu
+                    </a>
+                    , and{" "}
+                    <a
+                      href="https://zihanwang314.github.io/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="collab-link"
+                    >
+                      Zihan Wang
+                    </a>
+                    .
+                  </p>
+                </div>
               </div>
               <div className="about-image">
                 <img src={ProfileImage} alt="Yifang 'Michael' Chen" />
@@ -108,7 +150,8 @@ const Home = () => {
                 >
                   fork it
                 </a>{" "}
-                if you'd like to build your own version — and a little credit is always appreciated.
+                if you'd like to build your own version — and a little credit is
+                always appreciated.
               </p>
             </div>
           </section>
@@ -162,6 +205,96 @@ const Home = () => {
           <section className="news-section">
             <h2>News</h2>
             <News />
+          </section>
+
+          <section className="ongoing-projects-section">
+            <h2>Ongoing Projects</h2>
+            <div className="project-card">
+              <h3 className="project-title">
+                Computational Limitations and Advantages of State-Space Models
+                under Low Precision
+              </h3>
+              <div className="project-authors">
+                <span className="author-name">Yifang Chen</span>,{" "}
+                <a
+                  href="https://zihanwang314.github.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="author-link"
+                >
+                  Zihan Wang
+                </a>
+                ,{" "}
+                <a
+                  href="https://scholar.google.com/citations?user=YN3tHZ4AAAAJ&hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="author-link"
+                >
+                  Haochen Zhang
+                </a>
+                ,{" "}
+                <a
+                  href="https://www.cs.jhu.edu/~vova/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="author-link"
+                >
+                  Vladimir Braverman
+                </a>
+                ,{" "}
+                <a
+                  href="https://limanling.github.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="author-link"
+                >
+                  Manling Li
+                </a>
+                ,{" "}
+                <a
+                  href="https://2prime.github.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="author-link"
+                >
+                  Yiping Lu
+                </a>
+                ,{" "}
+                <a
+                  href="https://zhaoranwang.github.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="author-link"
+                >
+                  Zhaoran Wang
+                </a>
+              </div>
+              <ul className="project-details">
+                <li>
+                  <strong>Finite Memory Collapse:</strong> Investigating how
+                  Mamba fails at long-range tasks through the lens of floating
+                  point precision.{" "}
+                  <span className="acceptance-badge">
+                    Accepted to{" "}
+                    <a
+                      href="https://transformerstheory.github.io/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="workshop-link"
+                    >
+                      NeurIPS'25 WCTD Workshop
+                    </a>
+                  </span>
+                </li>
+                <li>
+                  <strong>Current Interest:</strong> Exploring circuit
+                  complexity classes of SSMs with time-variant gating as
+                  variables, and analyzing how different Chain-of-Thought (CoT)
+                  lengths affect the circuit complexity classes of SSMs.
+                </li>
+              </ul>
+            </div>
           </section>
 
           <section className="paper-section">

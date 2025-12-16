@@ -65,6 +65,55 @@
   color: #cccccc;
 }
 
+/* Research affiliation section */
+.research-affiliation {
+  margin-top: 24px;
+  padding: 20px;
+  background: linear-gradient(145deg, #252525, #2a2a2a);
+  border-left: 4px solid #780000;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.research-affiliation p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Affiliation link styling (for lab) */
+.affiliation-link {
+  color: #ff6b6b;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  padding: 2px 4px;
+  background: linear-gradient(to right, rgba(120, 0, 0, 0.2), transparent);
+  border-radius: 3px;
+}
+
+.affiliation-link:hover {
+  color: #ff8787;
+  border-bottom-color: #ff6b6b;
+  background: linear-gradient(to right, rgba(120, 0, 0, 0.4), transparent);
+}
+
+/* Collaborator link styling */
+.collab-link {
+  color: #fdf0d5;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px dotted #fdf0d5;
+  transition: all 0.3s ease;
+}
+
+.collab-link:hover {
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  text-shadow: 0 0 8px rgba(253, 240, 213, 0.5);
+}
+
 /* Profile image styling */
 .about-image {
   margin-left: 40px;
@@ -219,6 +268,130 @@ h2 {
   color: #fdf0d5;
   border-bottom: 2px solid #780000;
   padding-bottom: 5px;
+}
+
+/* Ongoing Projects section */
+.ongoing-projects-section {
+  margin-top: 40px;
+}
+
+.ongoing-projects-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #fdf0d5;
+  border-bottom: 2px solid #780000;
+  padding-bottom: 5px;
+}
+
+.project-card {
+  background: linear-gradient(145deg, #252525, #2a2a2a);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-left: 5px solid #780000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(120, 0, 0, 0.4);
+}
+
+.project-title {
+  font-size: 1.3em;
+  color: #fdf0d5;
+  margin-bottom: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.project-authors {
+  font-size: 1em;
+  color: #cccccc;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  padding: 12px;
+  background: rgba(120, 0, 0, 0.1);
+  border-radius: 6px;
+  border-left: 3px solid #780000;
+}
+
+.author-name {
+  font-weight: 500;
+  color: #fdf0d5;
+}
+
+.author-link {
+  color: #fdf0d5;
+  text-decoration: none;
+  border-bottom: 1px dotted #fdf0d5;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.author-link:hover {
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  text-shadow: 0 0 8px rgba(253, 240, 213, 0.5);
+}
+
+.project-details {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 16px;
+}
+
+.project-details li {
+  padding: 12px 0;
+  padding-left: 24px;
+  position: relative;
+  color: #cccccc;
+  line-height: 1.7;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-details li:last-child {
+  border-bottom: none;
+}
+
+.project-details li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #780000;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.project-details strong {
+  color: #fdf0d5;
+  font-weight: 600;
+}
+
+.acceptance-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 4px 10px;
+  background: linear-gradient(135deg, #780000, #a80000);
+  border-radius: 12px;
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #fdf0d5;
+  box-shadow: 0 2px 4px rgba(120, 0, 0, 0.3);
+}
+
+.workshop-link {
+  color: #fdf0d5;
+  text-decoration: none;
+  border-bottom: 1px solid #fdf0d5;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.workshop-link:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+  text-shadow: 0 0 8px rgba(253, 240, 213, 0.6);
 }
 
 /* Workshop section */
@@ -458,6 +631,16 @@ h2 {
     font-size: 1em;
   }
 
+  /* Research affiliation mobile styling */
+  .research-affiliation {
+    padding: 15px;
+    margin-top: 20px;
+  }
+
+  .research-affiliation p {
+    font-size: 1em;
+  }
+
   /* Education section mobile styling */
   .education-section ul {
     display: block;
@@ -471,6 +654,34 @@ h2 {
   /* Section titles */
   h2 {
     font-size: 1.5em;
+  }
+
+  /* Ongoing projects mobile styling */
+  .project-card {
+    padding: 18px;
+  }
+
+  .project-title {
+    font-size: 1.1em;
+  }
+
+  .project-authors {
+    font-size: 0.95em;
+    padding: 10px;
+  }
+
+  .project-details li {
+    font-size: 0.95em;
+    padding: 10px 0;
+    padding-left: 20px;
+  }
+
+  .acceptance-badge {
+    display: block;
+    margin-left: 0;
+    margin-top: 8px;
+    padding: 6px 10px;
+    font-size: 0.85em;
   }
 }
 
@@ -504,5 +715,40 @@ h2 {
 
   .education-section .degree {
     font-size: 0.9em;
+  }
+
+  /* Research affiliation iPhone styling */
+  .research-affiliation {
+    padding: 12px;
+  }
+
+  .research-affiliation p {
+    font-size: 0.95em;
+  }
+
+  /* Ongoing projects iPhone styling */
+  .project-card {
+    padding: 15px;
+  }
+
+  .project-title {
+    font-size: 1em;
+    line-height: 1.3;
+  }
+
+  .project-authors {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  .project-details li {
+    font-size: 0.9em;
+    padding: 8px 0;
+    padding-left: 18px;
+  }
+
+  .acceptance-badge {
+    font-size: 0.8em;
+    padding: 5px 8px;
   }
 }
