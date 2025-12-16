@@ -22,6 +22,13 @@ const Navigation = () => {
           </NavLink>
 
           <NavLink
+            to="/gallery"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Gallery
+          </NavLink>
+
+          <NavLink
             to="/notes"
             className={({ isActive }) => (isActive ? "active" : "")}
           >

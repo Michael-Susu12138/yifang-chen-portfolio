@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./News.css";
 
 const News = () => {
@@ -8,24 +9,44 @@ const News = () => {
   const newsItems = [
     {
       id: 1,
-      date: "May 2025",
-      title: "Universal Approximation of VAR accepted at ICML 2025",
+      date: "December 2025",
+      title:
+        "Graduated from University of Chicago with M.S. in Applied Data Science",
       description:
-        "My paper on Universal Approximation of VAR was accepted at ICML 2025, here is the publication link: https://arxiv.org/abs/2502.06167",
-      tag: "Research",
-      link: "https://arxiv.org/abs/2502.06167",
+        "Successfully completed my Master of Science degree in Applied Data Science at the University of Chicago.",
+      tag: "Education",
     },
     {
       id: 2,
-      date: "May 2025",
-      title: "Attend the CPAL 2025 conference at Stanford University",
+      date: "December 2025",
+      title: "Attended NeurIPS 2025 in San Diego",
       description:
-        "I attended the CPAL 2025 conference at Stanford University, here is the conference link: https://cpal.cc/",
-      tag: "Research",
-      link: "https://cpal.cc/",
+        "Had an amazing time at NeurIPS 2025 in San Diego! Check out the photo gallery: /gallery/neurips2025",
+      tag: "Conference",
+      link: "/gallery/neurips2025",
+      isInternal: true,
     },
     {
       id: 3,
+      date: "May 2025",
+      title: "Universal Approximation of VAR accepted at ICML 2025",
+      description:
+        "My paper on Universal Approximation of VAR was accepted at ICML 2025, here is the publication link: https://openreview.net/pdf?id=magOSIm8UT",
+      tag: "Research",
+      link: "https://openreview.net/pdf?id=magOSIm8UT",
+    },
+    {
+      id: 4,
+      date: "May 2025",
+      title: "Attend the CPAL 2025 conference at Stanford University",
+      description:
+        "I attended the CPAL 2025 conference at Stanford University, check out the photo gallery: /gallery/cpal2025",
+      tag: "Conference",
+      link: "/gallery/cpal2025",
+      isInternal: true,
+    },
+    {
+      id: 5,
       date: "January 2025",
       title: "Mamba paper accepted at CPAL Oral 2025",
       description:
@@ -34,7 +55,7 @@ const News = () => {
       link: "https://openreview.net/forum?id=bImlLT3r62",
     },
     {
-      id: 4,
+      id: 6,
       date: "September 2024",
       title: "Started M.S. at University of Chicago",
       description:
@@ -42,7 +63,7 @@ const News = () => {
       tag: "Education",
     },
     {
-      id: 5,
+      id: 7,
       date: "May 2024",
       title: "Bachelor's Degree in Computer Science from New York University",
       description:
@@ -52,31 +73,45 @@ const News = () => {
   ];
 
   // Function to render description with clickable links
-  const renderDescription = (description, link) => {
+  const renderDescription = (item) => {
+    const { description, link, isInternal } = item;
+
     if (link) {
       // Extract the link text from the description
+      const linkStartIndex =
+        description.indexOf("http") !== -1
+          ? description.indexOf("http")
+          : description.indexOf("/gallery");
       const linkText = description.substring(
-        description.indexOf("http"),
+        linkStartIndex,
         description.length
       );
-      const textBeforeLink = description.substring(
-        0,
-        description.indexOf("http")
-      );
+      const textBeforeLink = description.substring(0, linkStartIndex);
 
-      return (
-        <>
-          {textBeforeLink}
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="news-link"
-          >
-            {linkText}
-          </a>
-        </>
-      );
+      if (isInternal) {
+        return (
+          <>
+            {textBeforeLink}
+            <Link to={link} className="news-link">
+              {linkText}
+            </Link>
+          </>
+        );
+      } else {
+        return (
+          <>
+            {textBeforeLink}
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="news-link"
+            >
+              {linkText}
+            </a>
+          </>
+        );
+      }
     }
     return description;
   };
@@ -101,7 +136,7 @@ const News = () => {
             </div>
             <div className="news-content">
               <h3>{item.title}</h3>
-              <p>{renderDescription(item.description, item.link)}</p>
+              <p>{renderDescription(item)}</p>
             </div>
           </div>
         ))}

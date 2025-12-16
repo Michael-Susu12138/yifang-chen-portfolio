@@ -1,7 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Interests.css";
-// Adjust the path to your BJJ image once you have one
-// import BJJImage from "/assets/bjj.jpg";
 
 const Interests = () => {
   return (
@@ -34,7 +33,10 @@ const Interests = () => {
           </ul>
           <p className="highlight-text">
             BJJ has become my primary focus, and I'm proud to have earned my
-            blue belt through consistent training and dedication.
+            blue belt through consistent training and dedication.{" "}
+            <Link to="/gallery/bjj" className="gallery-link">
+              Check out my BJJ gallery →
+            </Link>
           </p>
         </div>
 

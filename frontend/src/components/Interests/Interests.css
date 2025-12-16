@@ -165,3 +165,22 @@
     padding: 3px 10px;
   }
 }
+
+/* Gallery link styling */
+.gallery-link {
+  color: #ff6b6b;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  padding: 2px 4px;
+  background: linear-gradient(to right, rgba(120, 0, 0, 0.2), transparent);
+  border-radius: 3px;
+  font-style: normal;
+}
+
+.gallery-link:hover {
+  color: #ff8787;
+  border-bottom-color: #ff6b6b;
+  background: linear-gradient(to right, rgba(120, 0, 0, 0.4), transparent);
+}

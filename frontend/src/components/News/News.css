@@ -94,6 +94,11 @@
   color: #74b9ff;
 }
 
+.news-tag.conference {
+  background-color: rgba(230, 126, 34, 0.3);
+  color: #f39c12;
+}
+
 .news-content h3 {
   font-size: 1.1em;
   color: #fdf0d5;
