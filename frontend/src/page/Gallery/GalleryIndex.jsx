@@ -28,8 +28,8 @@ const GalleryIndex = () => {
       date: "May 2025",
       description:
         "Attended the CPAL 2025 conference at Stanford University, and met with good friends and many great researchers",
-      thumbnailId: "IMG_5688_bgdebe",
-      thumbnail: cld.image("IMG_5688_bgdebe"),
+      thumbnailId: "IMG_5680_zxzicx",
+      thumbnail: cld.image("IMG_5680_zxzicx"),
       link: "/gallery/cpal2025",
       tag: "Conference",
       photoCount: 17,
