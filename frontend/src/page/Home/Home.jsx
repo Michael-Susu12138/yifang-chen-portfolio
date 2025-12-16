@@ -170,7 +170,7 @@ const Home = () => {
                   <span className="school-name">
                     M.S. in Applied Data Science
                   </span>
-                  <span className="date">2024 - Present</span>
+                  <span className="date">2024 - 2025</span>
                 </div>
               </li>
               <li className="education-item">

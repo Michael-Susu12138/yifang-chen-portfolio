@@ -270,3 +270,17 @@
     font-size: 0.9em;
   }
 }
+
+/* Video Styles */
+.photo-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.lightbox-content video {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 8px;
+}

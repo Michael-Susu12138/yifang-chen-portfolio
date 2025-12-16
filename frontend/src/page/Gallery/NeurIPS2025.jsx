@@ -1,127 +1,42 @@
 import React, { useState } from "react";
+import { AdvancedImage } from "@cloudinary/react";
 import Navigation from "../../components/Navigation/Navigation";
+import { cld } from "../../utils/cloudinary";
 import "./Gallery.css";
 
 const NeurIPS2025 = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // Photos from NeurIPS 2025
-  const photos = [
-    {
-      id: 1,
-      src: "/assets/neurips2025/IMG_9057.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 2,
-      src: "/assets/neurips2025/IMG_2862.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 3,
-      src: "/assets/neurips2025/IMG_2858.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 4,
-      src: "/assets/neurips2025/IMG_2856.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 5,
-      src: "/assets/neurips2025/IMG_8959.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 6,
-      src: "/assets/neurips2025/IMG_8942.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 7,
-      src: "/assets/neurips2025/IMG_8927.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 8,
-      src: "/assets/neurips2025/IMG_8925.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 9,
-      src: "/assets/neurips2025/IMG_8902.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 10,
-      src: "/assets/neurips2025/IMG_2803.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 11,
-      src: "/assets/neurips2025/IMG_2802.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 12,
-      src: "/assets/neurips2025/IMG_2801.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 13,
-      src: "/assets/neurips2025/IMG_2800.PNG",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 14,
-      src: "/assets/neurips2025/IMG_2799.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 15,
-      src: "/assets/neurips2025/IMG_2788.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 16,
-      src: "/assets/neurips2025/IMG_2787.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 17,
-      src: "/assets/neurips2025/IMG_2783.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 18,
-      src: "/assets/neurips2025/IMG_2786.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
-    {
-      id: 19,
-      src: "/assets/neurips2025/IMG_2785.jpeg",
-      alt: "NeurIPS 2025 - San Diego",
-      caption: "NeurIPS 2025",
-    },
+  // Photos from NeurIPS 2025 - stored on Cloudinary with 'neurips2025' tag
+  const photoIds = [
+    "IMG_9057_aksrgo",
+    "IMG_8959_iddqdx",
+    "IMG_8942_xuzwsu",
+    "IMG_2800_to9yt5",
+    "IMG_8902_gbmgzs",
+    "IMG_8925_rgadp7",
+    "IMG_8927_whva28",
+    "IMG_2862_zrsvp2",
+    "IMG_2856_sur9qm",
+    "IMG_2803_nv3du5",
+    "IMG_2858_x5ulek",
+    "IMG_2801_yszny3",
+    "IMG_2802_oxnkma",
+    "IMG_2799_ved9zi",
+    "IMG_2785_zxbnhf",
+    "IMG_2787_kegtcx",
+    "IMG_2788_z1cfkm",
+    "IMG_2783_gabvir",
+    "IMG_2786_qlr8sc",
   ];
+
+  const photos = photoIds.map((id, index) => ({
+    id: index + 1,
+    publicId: id, // Cloudinary folder structure
+    image: cld.image(id),
+    alt: "NeurIPS 2025 - San Diego",
+    caption: "NeurIPS 2025",
+  }));
 
   const openLightbox = (photo) => {
     setSelectedImage(photo);
@@ -133,7 +48,8 @@ const NeurIPS2025 = () => {
 
   const handlePrevious = () => {
     const currentIndex = photos.findIndex((p) => p.id === selectedImage.id);
-    const previousIndex = currentIndex > 0 ? currentIndex - 1 : photos.length - 1;
+    const previousIndex =
+      currentIndex > 0 ? currentIndex - 1 : photos.length - 1;
     setSelectedImage(photos[previousIndex]);
   };
 
@@ -162,7 +78,7 @@ const NeurIPS2025 = () => {
               className="photo-card"
               onClick={() => openLightbox(photo)}
             >
-              <img src={photo.src} alt={photo.alt} />
+              <AdvancedImage cldImg={photo.image} alt={photo.alt} />
               <div className="photo-overlay">
                 <p>{photo.caption}</p>
               </div>
@@ -190,8 +106,14 @@ const NeurIPS2025 = () => {
             >
               ‹
             </button>
-            <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-              <img src={selectedImage.src} alt={selectedImage.alt} />
+            <div
+              className="lightbox-content"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <AdvancedImage
+                cldImg={selectedImage.image}
+                alt={selectedImage.alt}
+              />
               <p className="lightbox-caption">{selectedImage.caption}</p>
             </div>
             <button
@@ -212,4 +134,3 @@ const NeurIPS2025 = () => {
 };
 
 export default NeurIPS2025;
-

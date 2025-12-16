@@ -149,6 +149,18 @@
   border: 1px solid rgba(41, 128, 185, 0.5);
 }
 
+.gallery-tag.personal {
+  background-color: rgba(236, 72, 153, 0.3);
+  color: #f472b6;
+  border: 1px solid rgba(236, 72, 153, 0.5);
+}
+
+.gallery-tag.sports {
+  background-color: rgba(245, 158, 11, 0.3);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.5);
+}
+
 /* Meta Info */
 .gallery-meta {
   margin-bottom: 15px;
@@ -275,4 +287,3 @@
     font-size: 0.95em;
   }
 }
-
