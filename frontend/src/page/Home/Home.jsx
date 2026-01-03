@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import ParticlesComponent from "../../components/ParticlesComponent/ParticlesComponent";
 import MyCard from "../../components/Card/MyCard";
-import PaperList from "../../components/PaperList/PaperList";
 import ProfileImage from "/assets/selfie.jpg"; // Image of yourself
 import ProjectList from "../../components/ProjectList/ProjectList";
 import PublicationList from "../../components/PublicationList/PublicationList";
-import WorkshopList from "../../components/WorkshopList/WorkshopList";
 import News from "../../components/News/News";
-import Interests from "../../components/Interests/Interests";
 import Navigation from "../../components/Navigation/Navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -298,13 +296,11 @@ const Home = () => {
           </section>
 
           <section className="paper-section">
-            <h2>Publications:</h2>
+            <h2>Selected Publications</h2>
             <PublicationList></PublicationList>
-          </section>
-
-          <section className="workshop-section">
-            <h2>Workshops:</h2>
-            <WorkshopList />
+            <Link to="/publications" className="view-all-link">
+              → View full list of my research
+            </Link>
           </section>
 
           <section className="service-section">
@@ -329,14 +325,22 @@ const Home = () => {
             </ul>
           </section>
 
-          <section className="paper-section">
-            <h2>Manuscripts:</h2>
-            <PaperList></PaperList>
-          </section>
-
           <section className="interests-section">
-            <h2>Misc. Interests</h2>
-            <Interests />
+            <h2>Misc</h2>
+            <ul className="misc-list">
+              <li>
+                I practice Brazilian Jiu-Jitsu and am proud to have earned my blue belt.{" "}
+                <Link to="/gallery/bjj" className="bjj-gallery-link">
+                  Check out my BJJ gallery →
+                </Link>
+              </li>
+              <li>
+                Ranked #61 nationally in PUBG Mobile China (和平精英)
+              </li>
+              <li>
+                League of Legends player
+              </li>
+            </ul>
           </section>
         </main>
       </div>

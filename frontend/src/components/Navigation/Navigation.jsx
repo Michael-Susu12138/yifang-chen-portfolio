@@ -22,6 +22,13 @@ const Navigation = () => {
           </NavLink>
 
           <NavLink
+            to="/publications"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Research
+          </NavLink>
+
+          <NavLink
             to="/gallery"
             className={({ isActive }) => (isActive ? "active" : "")}
           >

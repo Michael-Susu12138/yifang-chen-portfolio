@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./page/Home/Home";
 import AboutMe from "./page/AboutMe/AboutMe";
+import Publications from "./page/Publications/Publications";
 import Notes from "./page/Notes/Notes";
 import GalleryIndex from "./page/Gallery/GalleryIndex";
 import NeurIPS2025 from "./page/Gallery/NeurIPS2025";
@@ -16,6 +17,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/aboutme" element={<AboutMe />} />
+        <Route path="/publications" element={<Publications />} />
         <Route path="/gallery" element={<GalleryIndex />} />
         <Route path="/gallery/neurips2025" element={<NeurIPS2025 />} />
         <Route path="/gallery/cpal2025" element={<CPAL2025 />} />
