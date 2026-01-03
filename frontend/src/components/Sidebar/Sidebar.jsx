@@ -27,7 +27,7 @@ const Sidebar = () => {
         <p className="description">MS student at the University of Chicago</p>
         <p className="research-interest">
           Research Interests:{" "}
-          <strong>LLM, Machine Learning Theory, Attention Mechanism</strong>
+          <strong>LLM, Machine Learning Theory, Formal Language Theory</strong>
         </p>
         {/* Contact Me Button */}
         <div className="contact-me-button-container">

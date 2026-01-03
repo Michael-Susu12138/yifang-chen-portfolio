@@ -1,0 +1,186 @@
+.publications-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+  color: #ffffff;
+}
+
+.publications-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 40px 60px;
+}
+
+.publications-header {
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.publications-header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.publications-subtitle {
+  font-size: 1rem;
+  color: #999999;
+}
+
+.alpha-beta-note {
+  font-size: 0.95rem;
+  color: #999999;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.publications-section {
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.publications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.publication-item {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.publication-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.publication-title {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.publication-link {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.publication-link:hover {
+  color: #8a9fff;
+  text-decoration: underline;
+}
+
+.publication-authors {
+  font-size: 0.95rem;
+  color: #aaaaaa;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.publication-venue {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #888888;
+  font-style: italic;
+}
+
+
+/* Highlight author name */
+.highlight-name {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Conference abbreviation */
+.conference-abbr {
+  color: #ff6b6b;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Workshop abbreviation */
+.workshop-abbr {
+  color: #a78bfa;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Manuscript venue */
+.manuscript-venue {
+  color: #888888;
+  font-style: italic;
+}
+
+/* Oral badge */
+.oral-badge {
+  font-style: normal;
+  color: #888888;
+}
+
+.oral-highlight {
+  color: #ffa940;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .publications-container {
+    padding: 80px 20px 40px;
+  }
+
+  .publications-header h1 {
+    font-size: 2rem;
+  }
+
+  .publications-subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .publication-item {
+    padding: 20px;
+  }
+
+  .publication-title {
+    font-size: 1.1rem;
+  }
+
+  .publication-authors {
+    font-size: 0.95rem;
+  }
+
+  .venue-tag {
+    font-size: 0.85rem;
+    padding: 5px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .publications-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .publication-title {
+    font-size: 1rem;
+  }
+}
+

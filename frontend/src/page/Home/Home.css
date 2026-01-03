@@ -185,6 +185,21 @@ h2 {
   margin-bottom: 10px;
 }
 
+/* Full publications link */
+.view-all-link {
+  color: #999999;
+  font-size: 0.9em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.view-all-link:hover {
+  color: #ff6b6b;
+  text-decoration: underline;
+}
+
 .education-section .date {
   margin-right: 0;
   font-size: 0.9em;
@@ -473,6 +488,37 @@ h2 {
   color: #fdf0d5;
   border-bottom: 2px solid #780000;
   padding-bottom: 5px;
+}
+
+.interests-section p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.misc-list {
+  list-style: disc;
+  padding-left: 25px;
+  margin: 0;
+}
+
+.misc-list li {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #cccccc;
+  margin-bottom: 12px;
+}
+
+.bjj-gallery-link {
+  color: #ff6b6b;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.bjj-gallery-link:hover {
+  color: #ff8787;
+  text-decoration: underline;
 }
 
 /* Sidebar toggle button */
