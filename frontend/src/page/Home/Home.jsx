@@ -329,17 +329,18 @@ const Home = () => {
             <h2>Misc</h2>
             <ul className="misc-list">
               <li>
-                I practice Brazilian Jiu-Jitsu and am proud to have earned my blue belt.{" "}
+                I practice Brazilian Jiu-Jitsu and am proud to have earned my
+                blue belt.{" "}
                 <Link to="/gallery/bjj" className="bjj-gallery-link">
                   Check out my BJJ gallery →
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 Ranked #61 nationally in PUBG Mobile China (和平精英)
               </li>
               <li>
                 League of Legends player
-              </li>
+              </li> */}
             </ul>
           </section>
         </main>
