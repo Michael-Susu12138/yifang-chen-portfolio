@@ -4,12 +4,13 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import ParticlesComponent from "../../components/ParticlesComponent/ParticlesComponent";
 import MyCard from "../../components/Card/MyCard";
 import ProfileImage from "/assets/selfie.jpg"; // Image of yourself
+import AliCloudIcon from "/assets/alibabacloud-color.png";
 import ProjectList from "../../components/ProjectList/ProjectList";
 import PublicationList from "../../components/PublicationList/PublicationList";
 import News from "../../components/News/News";
 import Navigation from "../../components/Navigation/Navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faMapMarkerAlt, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 import "./Home.css";
 
@@ -84,46 +85,47 @@ const Home = () => {
                   </strong>
                   .
                 </p>
-                <div className="research-affiliation">
-                  <p>
-                    I am currently a Research Intern at{" "}
-                    <a
-                      href="https://www.mll.lab.northwestern.edu/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="affiliation-link"
-                    >
-                      MLL Lab
-                    </a>
-                    , where I am fortunate to collaborate with{" "}
-                    <a
-                      href="https://limanling.github.io/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="collab-link"
-                    >
-                      Prof. Manling Li
-                    </a>
-                    ,{" "}
-                    <a
-                      href="https://2prime.github.io/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="collab-link"
-                    >
-                      Prof. Yiping Lu
-                    </a>
-                    , and{" "}
-                    <a
-                      href="https://zihanwang314.github.io/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="collab-link"
-                    >
-                      Zihan Wang
-                    </a>
-                    .
+                <p>During my master's, I was fortunate enough to be advised by{" "}
+                  <a
+                    href="https://2prime.github.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="collab-link"
+                  >
+                    Prof. Yiping Lu
+                  </a>{" "}
+                  and{" "}
+                  <a
+                    href="https://limanling.github.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="collab-link"
+                  >
+                    Prof. Manling Li
+                  </a>
+                  .
                   </p>
+                <div className="research-affiliation">
+                  <div className="current-position">
+                    <img
+                      src={AliCloudIcon}
+                      alt="Alibaba Cloud"
+                      className="company-icon"
+                    />
+                    <p>
+                      I am currently a{" "}
+                      <strong>Multimodal LLM Intern</strong> at{" "}
+                      <a
+                        href="https://www.alibabacloud.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="affiliation-link"
+                      >
+                        Alibaba Cloud
+                      </a>
+                      .
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="about-image">
@@ -154,145 +156,81 @@ const Home = () => {
             </div>
           </section>
 
-          <section className="education-section">
-            <h2>Education</h2>
-            <ul>
-              <li className="education-item">
-                <img
-                  src="/assets/uchicago_icon.png"
-                  alt="University of Chicago"
-                  className="school-icon"
-                />
-                <div className="education-details">
-                  <strong className="degree">University of Chicago</strong>
-                  <span className="school-name">
-                    M.S. in Applied Data Science
-                  </span>
-                  <span className="date">2024 - 2025</span>
-                </div>
-              </li>
-              <li className="education-item">
-                <img
-                  src="/assets/nyu_icon.png"
-                  alt="New York University"
-                  className="school-icon"
-                />
-                <div className="education-details">
-                  <strong className="degree">New York University</strong>
-                  <span className="school-name">B.S. in Computer Science</span>
-                  <span className="date">2020 - 2024</span>
-                </div>
-              </li>
-              <li className="education-item">
-                <img
-                  src="/assets/nbps_icon.jpg"
-                  alt="North Broward Preparatory School"
-                  className="school-icon"
-                />
-                <div className="education-details">
-                  <strong className="degree">
-                    North Broward Preparatory School
-                  </strong>
-                  <span className="school-name">High School</span>
-                  <span className="date">2016 - 2020</span>
-                </div>
-              </li>
-            </ul>
-          </section>
+          <div className="edu-industry-wrapper">
+            <section className="education-section">
+              <h2>Education</h2>
+              <ul>
+                <li className="education-item">
+                  <img
+                    src="/assets/uchicago_icon.png"
+                    alt="University of Chicago"
+                    className="school-icon"
+                  />
+                  <div className="education-details">
+                    <strong className="degree">University of Chicago</strong>
+                    <span className="school-name">
+                      M.S. in Applied Data Science
+                    </span>
+                    <span className="date">2024 - 2025</span>
+                  </div>
+                </li>
+                <li className="education-item">
+                  <img
+                    src="/assets/nyu_icon.png"
+                    alt="New York University"
+                    className="school-icon"
+                  />
+                  <div className="education-details">
+                    <strong className="degree">New York University</strong>
+                    <span className="school-name">
+                      B.S. in Computer Science
+                    </span>
+                    <span className="date">2020 - 2024</span>
+                  </div>
+                </li>
+                <li className="education-item">
+                  <img
+                    src="/assets/nbps_icon.jpg"
+                    alt="North Broward Preparatory School"
+                    className="school-icon"
+                  />
+                  <div className="education-details">
+                    <strong className="degree">
+                      North Broward Preparatory School
+                    </strong>
+                    <span className="school-name">High School</span>
+                    <span className="date">2016 - 2020</span>
+                  </div>
+                </li>
+              </ul>
+            </section>
+
+            <section className="industry-section">
+              <h2>Industry</h2>
+              <ul>
+                <li className="industry-item">
+                  <img
+                    src={AliCloudIcon}
+                    alt="Alibaba Cloud"
+                    className="company-logo-icon"
+                  />
+                  <div className="industry-details">
+                    <strong className="company-name">Alibaba Cloud</strong>
+                    <span className="role-name">Multimodal LLM Intern</span>
+                    <span className="date">Feb 2026 - Present</span>
+                  </div>
+                    <div className="industry-location">
+                      <FontAwesomeIcon icon={faMapMarkerAlt} className="location-pin" />
+                      <span>Hangzhou, China</span>
+                    </div>
+                </li>
+              </ul>
+            </section>
+          </div>
 
           <section className="news-section">
             <h2>News</h2>
             <News />
-          </section>
-
-          <section className="ongoing-projects-section">
-            <h2>Ongoing Projects</h2>
-            <div className="project-card">
-              <h3 className="project-title">
-                Computational Limitations and Advantages of State-Space Models
-                under Low Precision
-              </h3>
-              <div className="project-authors">
-                <span className="author-name">Yifang Chen</span>,{" "}
-                <a
-                  href="https://zihanwang314.github.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="author-link"
-                >
-                  Zihan Wang
-                </a>
-                ,{" "}
-                <a
-                  href="https://scholar.google.com/citations?user=YN3tHZ4AAAAJ&hl=en"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="author-link"
-                >
-                  Haochen Zhang
-                </a>
-                ,{" "}
-                <a
-                  href="https://www.cs.jhu.edu/~vova/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="author-link"
-                >
-                  Vladimir Braverman
-                </a>
-                ,{" "}
-                <a
-                  href="https://limanling.github.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="author-link"
-                >
-                  Manling Li
-                </a>
-                ,{" "}
-                <a
-                  href="https://2prime.github.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="author-link"
-                >
-                  Yiping Lu
-                </a>
-                ,{" "}
-                <a
-                  href="https://zhaoranwang.github.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="author-link"
-                >
-                  Zhaoran Wang
-                </a>
-              </div>
-              <ul className="project-details">
-                <li>
-                  <strong>Finite Memory Collapse:</strong> Investigating how
-                  Mamba fails at long-range tasks through the lens of floating
-                  point precision.{" "}
-                  <span className="acceptance-badge">
-                    Accepted to{" "}
-                    <a
-                      href="https://transformerstheory.github.io/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="workshop-link"
-                    >
-                      NeurIPS'25 WCTD Workshop
-                    </a>
-                  </span>
-                </li>
-                <li>
-                  <strong>Current Interest:</strong> Exploring circuit
-                  complexity classes of SSMs with time-variant gating as
-                  variables, and analyzing how different Chain-of-Thought (CoT)
-                  lengths affect the circuit complexity classes of SSMs.
-                </li>
-              </ul>
-            </div>
           </section>
 
           <section className="paper-section">

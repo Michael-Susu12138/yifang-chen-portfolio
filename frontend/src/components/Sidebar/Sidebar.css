@@ -20,8 +20,8 @@
 }
 
 .profile .avatar {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   margin: 0 auto 15px;
   border-radius: 50%;
   overflow: hidden;
@@ -30,7 +30,9 @@
 
 .profile .avatar img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 10%;
 }
 
 .profile h2 {
@@ -157,8 +159,8 @@
   }
 
   .profile .avatar {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     margin: 0 auto 10px;
   }
 
@@ -229,8 +231,8 @@
   }
 
   .profile .avatar {
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
   }
 
   .profile h2 {

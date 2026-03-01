@@ -13,7 +13,7 @@ import {
 
 import IpGlobe from "../IpGlobe/IpGlobe";
 
-import OfficialImage from "/assets/official-removebg-preview.png";
+import OfficialImage from "/assets/gpt_profile_photo.png";
 import "./Sidebar.css";
 
 const Sidebar = () => {
@@ -24,10 +24,10 @@ const Sidebar = () => {
           <img src={OfficialImage} alt="Yifang 'Michael' Chen" />
         </div>
         <h2>Yifang Chen</h2>
-        <p className="description">MS student at the University of Chicago</p>
+        <p className="description">LLM Intern at Alibaba Cloud</p>
         <p className="research-interest">
           Research Interests:{" "}
-          <strong>LLM, Machine Learning Theory, Formal Language Theory</strong>
+          <strong>Large Language Models, ML Theory, Attention Optimizations</strong>
         </p>
         {/* Contact Me Button */}
         <div className="contact-me-button-container">

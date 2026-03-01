@@ -8,6 +8,14 @@ const News = () => {
   // Sample news data - you can replace this with your actual achievements
   const newsItems = [
     {
+      id: 0,
+      date: "Feb 2026 - Present",
+      title: "Joined Alibaba Cloud as Multimodal LLM Intern",
+      description:
+        "Excited to start my journey as a Multimodal LLM Intern at Alibaba Cloud!",
+      tag: "Industry",
+    },
+    {
       id: 1,
       date: "December 2025",
       title:
