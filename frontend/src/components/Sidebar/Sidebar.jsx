@@ -24,10 +24,9 @@ const Sidebar = () => {
           <img src={OfficialImage} alt="Yifang 'Michael' Chen" />
         </div>
         <h2>Yifang Chen</h2>
-        <p className="description">LLM Intern at Alibaba Cloud</p>
+        <p className="description">LLM Research Intern at Alibaba Cloud</p>
         <p className="research-interest">
-          Research Interests:{" "}
-          <strong>Large Language Models, ML Theory, Attention Optimizations</strong>
+          Research Interests: <strong>Large Language Models</strong>
         </p>
         {/* Contact Me Button */}
         <div className="contact-me-button-container">

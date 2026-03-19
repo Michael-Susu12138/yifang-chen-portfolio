@@ -331,6 +331,31 @@ h2 {
   list-style: none;
 }
 
+.education-toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.education-toggle-link {
+  color: #fdf0d5;
+  font-size: 0.85em;
+  font-weight: 600;
+  text-decoration: none;
+  background: linear-gradient(145deg, #2d2d2d, #272727);
+  border-left: 2px solid #780000;
+  border-right: 2px solid #780000;
+  border-radius: 20px;
+  padding: 6px 20px;
+  transition: all 0.3s ease;
+}
+
+.education-toggle-link:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
 /* In standalone context (outside wrapper) keep 3-across layout */
 :not(.edu-industry-wrapper) > .education-section ul {
   flex-direction: row;
@@ -363,6 +388,22 @@ h2 {
   object-fit: cover;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background-color: white;
+}
+
+.school-icon-placeholder {
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.55em;
+  font-weight: 700;
+  color: #fdf0d5;
+  background: linear-gradient(145deg, #3a3a3a, #252525);
+  border: 1px solid #555555;
+  letter-spacing: 0.04em;
 }
 
 .education-details {

@@ -9,14 +9,23 @@ const News = () => {
   const newsItems = [
     {
       id: 0,
-      date: "Feb 2026 - Present",
-      title: "Joined Alibaba Cloud as Multimodal LLM Intern",
+      date: "March 2026",
+      title: "Accepted UChicago Data Science Ph.D. Offer",
       description:
-        "Excited to start my journey as a Multimodal LLM Intern at Alibaba Cloud!",
-      tag: "Industry",
+        "I have accepted my offer to join the University of Chicago as an incoming Ph.D. student in Data Science, beginning a new education journey.",
+      tag: "Education",
     },
     {
       id: 1,
+      date: "Feb 2026 - Present",
+      title: "Joined Alibaba Cloud as Large Language Model Research Intern",
+      description:
+        "Excited to start my journey as an LLM Research Intern at Alibaba Cloud!",
+      tag: "Industry",
+    },
+    {
+      id: 2,
+      date: "Feb 2026 - Present",
       date: "December 2025",
       title:
         "Graduated from University of Chicago with M.S. in Applied Data Science",
@@ -25,7 +34,7 @@ const News = () => {
       tag: "Education",
     },
     {
-      id: 2,
+      id: 3,
       date: "December 2025",
       title: "Attended NeurIPS 2025 in San Diego",
       description:
@@ -35,7 +44,7 @@ const News = () => {
       isInternal: true,
     },
     {
-      id: 3,
+      id: 4,
       date: "May 2025",
       title: "Universal Approximation of VAR accepted at ICML 2025",
       description:
@@ -44,7 +53,7 @@ const News = () => {
       link: "https://openreview.net/pdf?id=magOSIm8UT",
     },
     {
-      id: 4,
+      id: 5,
       date: "May 2025",
       title: "Attend the CPAL 2025 conference at Stanford University",
       description:
@@ -54,7 +63,7 @@ const News = () => {
       isInternal: true,
     },
     {
-      id: 5,
+      id: 6,
       date: "January 2025",
       title: "Mamba paper accepted at CPAL Oral 2025",
       description:
@@ -63,7 +72,7 @@ const News = () => {
       link: "https://openreview.net/forum?id=bImlLT3r62",
     },
     {
-      id: 6,
+      id: 7,
       date: "September 2024",
       title: "Started M.S. at University of Chicago",
       description:
@@ -71,7 +80,7 @@ const News = () => {
       tag: "Education",
     },
     {
-      id: 7,
+      id: 8,
       date: "May 2024",
       title: "Bachelor's Degree in Computer Science from New York University",
       description:
@@ -92,7 +101,7 @@ const News = () => {
           : description.indexOf("/gallery");
       const linkText = description.substring(
         linkStartIndex,
-        description.length
+        description.length,
       );
       const textBeforeLink = description.substring(0, linkStartIndex);
 

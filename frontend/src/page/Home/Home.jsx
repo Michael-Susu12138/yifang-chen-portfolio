@@ -10,13 +10,60 @@ import PublicationList from "../../components/PublicationList/PublicationList";
 import News from "../../components/News/News";
 import Navigation from "../../components/Navigation/Navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMapMarkerAlt, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMapMarkerAlt,
+  faBars,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
 
 import "./Home.css";
 
 const Home = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
+  const [educationExpanded, setEducationExpanded] = useState(false);
+
+  const educationItems = [
+    {
+      school: "University of Chicago",
+      degree: "Incoming Ph.D. in Data Science",
+      date: "2026 - Present",
+      icon: "/assets/uchicago_icon.png",
+      iconAlt: "University of Chicago",
+    },
+    {
+      school: "University of Chicago",
+      degree: "M.S. in Applied Data Science",
+      date: "2024 - 2025",
+      icon: "/assets/uchicago_icon.png",
+      iconAlt: "University of Chicago",
+    },
+    {
+      school: "New York University",
+      degree: "B.S. in Computer Science",
+      date: "2020 - 2024",
+      icon: "/assets/nyu_icon.png",
+      iconAlt: "New York University",
+    },
+    {
+      school: "North Broward Preparatory School",
+      degree: "High School",
+      date: "2016 - 2020",
+      icon: "/assets/nbps_icon.jpg",
+      iconAlt: "North Broward Preparatory School",
+    },
+    {
+      school: "Zhengzhou Foreign Language Middle School",
+      degree: "Middle School",
+      date: "2014 - 2016",
+      icon: "/assets/zzflms.png",
+      iconAlt: "Zhengzhou Foreign Language Middle School",
+    },
+  ];
+
+  const displayedEducationItems = educationExpanded
+    ? educationItems
+    : educationItems.slice(0, 3);
 
   // Check if viewport is mobile
   useEffect(() => {
@@ -78,14 +125,13 @@ const Home = () => {
                 <h2>Yifang Chen "陈奕方"</h2>
                 <p>
                   I am <strong>Yifang Chen "陈奕方"</strong>, a researcher with
-                  a strong focus on{" "}
-                  <strong>
-                    Machine Learning Theory, Expressiveness and Learnability of
-                    Large Language Models (LLMs), and Efficient LLMs
-                  </strong>
-                  .
+                  a strong focus on building{" "}
+                  <strong>Efficient Large Language Models</strong>.
                 </p>
-                <p>During my master's, I was fortunate enough to be advised by{" "}
+                <p>
+                  I am an incoming Data Science PhD at the University of Chicago
+                  Fall 2026. During my master's, I was fortunate enough to be
+                  advised by{" "}
                   <a
                     href="https://2prime.github.io/"
                     target="_blank"
@@ -104,7 +150,7 @@ const Home = () => {
                     Prof. Manling Li
                   </a>
                   .
-                  </p>
+                </p>
                 <div className="research-affiliation">
                   <div className="current-position">
                     <img
@@ -113,8 +159,7 @@ const Home = () => {
                       className="company-icon"
                     />
                     <p>
-                      I am currently a{" "}
-                      <strong>Multimodal LLM Intern</strong> at{" "}
+                      I am currently an <strong> LLM Research Intern</strong> at{" "}
                       <a
                         href="https://www.alibabacloud.com/"
                         target="_blank"
@@ -160,49 +205,42 @@ const Home = () => {
             <section className="education-section">
               <h2>Education</h2>
               <ul>
-                <li className="education-item">
-                  <img
-                    src="/assets/uchicago_icon.png"
-                    alt="University of Chicago"
-                    className="school-icon"
-                  />
-                  <div className="education-details">
-                    <strong className="degree">University of Chicago</strong>
-                    <span className="school-name">
-                      M.S. in Applied Data Science
-                    </span>
-                    <span className="date">2024 - 2025</span>
-                  </div>
-                </li>
-                <li className="education-item">
-                  <img
-                    src="/assets/nyu_icon.png"
-                    alt="New York University"
-                    className="school-icon"
-                  />
-                  <div className="education-details">
-                    <strong className="degree">New York University</strong>
-                    <span className="school-name">
-                      B.S. in Computer Science
-                    </span>
-                    <span className="date">2020 - 2024</span>
-                  </div>
-                </li>
-                <li className="education-item">
-                  <img
-                    src="/assets/nbps_icon.jpg"
-                    alt="North Broward Preparatory School"
-                    className="school-icon"
-                  />
-                  <div className="education-details">
-                    <strong className="degree">
-                      North Broward Preparatory School
-                    </strong>
-                    <span className="school-name">High School</span>
-                    <span className="date">2016 - 2020</span>
-                  </div>
-                </li>
+                {displayedEducationItems.map((item) => (
+                  <li
+                    className="education-item"
+                    key={`${item.school}-${item.date}`}
+                  >
+                    {item.icon ? (
+                      <img
+                        src={item.icon}
+                        alt={item.iconAlt}
+                        className="school-icon"
+                      />
+                    ) : (
+                      <div className="school-icon-placeholder">EDU</div>
+                    )}
+                    <div className="education-details">
+                      <strong className="degree">{item.school}</strong>
+                      <span className="school-name">{item.degree}</span>
+                      <span className="date">{item.date}</span>
+                    </div>
+                  </li>
+                ))}
               </ul>
+              {educationItems.length > 3 && (
+                <div className="education-toggle-container">
+                  <a
+                    href="#"
+                    className="education-toggle-link"
+                    onClick={(event) => {
+                      event.preventDefault();
+                      setEducationExpanded(!educationExpanded);
+                    }}
+                  >
+                    {educationExpanded ? "Show Less" : "View Full Education"}
+                  </a>
+                </div>
+              )}
             </section>
 
             <section className="industry-section">
@@ -219,10 +257,13 @@ const Home = () => {
                     <span className="role-name">Multimodal LLM Intern</span>
                     <span className="date">Feb 2026 - Present</span>
                   </div>
-                    <div className="industry-location">
-                      <FontAwesomeIcon icon={faMapMarkerAlt} className="location-pin" />
-                      <span>Hangzhou, China</span>
-                    </div>
+                  <div className="industry-location">
+                    <FontAwesomeIcon
+                      icon={faMapMarkerAlt}
+                      className="location-pin"
+                    />
+                    <span>Hangzhou, China</span>
+                  </div>
                 </li>
               </ul>
             </section>
