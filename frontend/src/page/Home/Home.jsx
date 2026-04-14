@@ -4,7 +4,8 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import ParticlesComponent from "../../components/ParticlesComponent/ParticlesComponent";
 import MyCard from "../../components/Card/MyCard";
 import ProfileImage from "/assets/selfie.jpg"; // Image of yourself
-import AliCloudIcon from "/assets/alibabacloud-color.png";
+// import TongyiIcon from "/assets/tongyi_icon.jpeg";
+import TongyiIcon from "/assets/tongyi_icon_nobg.png";
 import ProjectList from "../../components/ProjectList/ProjectList";
 import PublicationList from "../../components/PublicationList/PublicationList";
 import News from "../../components/News/News";
@@ -154,19 +155,19 @@ const Home = () => {
                 <div className="research-affiliation">
                   <div className="current-position">
                     <img
-                      src={AliCloudIcon}
-                      alt="Alibaba Cloud"
+                      src={TongyiIcon}
+                      alt="Alibaba Tongyi Lab"
                       className="company-icon"
                     />
                     <p>
                       I am currently an <strong> LLM Research Intern</strong> at{" "}
                       <a
-                        href="https://www.alibabacloud.com/"
+                        href="https://tongyi.aliyun.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="affiliation-link"
                       >
-                        Alibaba Cloud
+                        Alibaba Tongyi Lab
                       </a>
                       .
                     </p>
@@ -248,13 +249,13 @@ const Home = () => {
               <ul>
                 <li className="industry-item">
                   <img
-                    src={AliCloudIcon}
-                    alt="Alibaba Cloud"
+                    src={TongyiIcon}
+                    alt="Alibaba Tongyi Lab"
                     className="company-logo-icon"
                   />
                   <div className="industry-details">
-                    <strong className="company-name">Alibaba Cloud</strong>
-                    <span className="role-name">Multimodal LLM Intern</span>
+                    <strong className="company-name">Alibaba Tongyi Lab</strong>
+                    <span className="role-name">LLM Research Intern</span>
                     <span className="date">Feb 2026 - Present</span>
                   </div>
                   <div className="industry-location">

@@ -24,7 +24,7 @@ const Sidebar = () => {
           <img src={OfficialImage} alt="Yifang 'Michael' Chen" />
         </div>
         <h2>Yifang Chen</h2>
-        <p className="description">LLM Research Intern at Alibaba Cloud</p>
+        <p className="description">LLM Research Intern at Alibaba Tongyi Lab</p>
         <p className="research-interest">
           Research Interests: <strong>Large Language Models</strong>
         </p>

@@ -70,7 +70,7 @@
   margin-top: 24px;
   padding: 20px;
   background: linear-gradient(145deg, #252525, #2a2a2a);
-  border-left: 4px solid #780000;
+  border-left: 4px solid #5165E8;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
@@ -81,22 +81,22 @@
   margin: 0;
 }
 
-/* Affiliation link styling (for lab) */
+/* Affiliation link styling (for Tongyi Lab) */
 .affiliation-link {
-  color: #ff6b6b;
+  color: #8B9BF7;
   font-weight: 600;
   text-decoration: none;
   border-bottom: 2px solid transparent;
   transition: all 0.3s ease;
   padding: 2px 4px;
-  background: linear-gradient(to right, rgba(120, 0, 0, 0.2), transparent);
+  background: linear-gradient(to right, rgba(81, 101, 232, 0.2), transparent);
   border-radius: 3px;
 }
 
 .affiliation-link:hover {
-  color: #ff8787;
-  border-bottom-color: #ff6b6b;
-  background: linear-gradient(to right, rgba(120, 0, 0, 0.4), transparent);
+  color: #aab6fa;
+  border-bottom-color: #8B9BF7;
+  background: linear-gradient(to right, rgba(81, 101, 232, 0.4), transparent);
 }
 
 /* Collaborator link styling */
@@ -114,12 +114,12 @@
   text-shadow: 0 0 8px rgba(253, 240, 213, 0.5);
 }
 
-/* Current position block (Alibaba Cloud) */
+/* Current position block (Tongyi Lab) */
 .current-position {
   display: flex;
   align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  gap: 12px;
+  flex-wrap: nowrap;
 }
 
 .current-position p {
@@ -129,11 +129,12 @@
 }
 
 .company-icon {
-  height: 36px;
-  width: auto;
+  height: 28px;
+  width: 28px;
   object-fit: contain;
   filter: brightness(1.05);
   flex-shrink: 0;
+  border-radius: 6px;
 }
 
 /* Profile image styling */
@@ -208,7 +209,7 @@ h2 {
 /* Industry section */
 /* Industry heading — override only the border colour */
 .industry-section h2 {
-  border-bottom-color: #ff6b2b;
+  border-bottom-color: #5165E8;
 }
 
 .industry-section ul {
@@ -224,7 +225,7 @@ h2 {
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-left: 3px solid #ff6b2b;
+  border-left: 3px solid #5165E8;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   align-items: center;
@@ -273,7 +274,7 @@ h2 {
 
 .role-name {
   font-size: 0.9em;
-  color: #ff9f43;
+  color: #8B9BF7;
 }
 
 /* Education and publications sections */

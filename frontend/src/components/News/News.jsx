@@ -18,14 +18,13 @@ const News = () => {
     {
       id: 1,
       date: "Feb 2026 - Present",
-      title: "Joined Alibaba Cloud as Large Language Model Research Intern",
+      title: "Joined Alibaba Tongyi Lab as LLM Research Intern",
       description:
-        "Excited to start my journey as an LLM Research Intern at Alibaba Cloud!",
+        "Excited to start my journey as an LLM Research Intern at Alibaba Tongyi Lab!",
       tag: "Industry",
     },
     {
       id: 2,
-      date: "Feb 2026 - Present",
       date: "December 2025",
       title:
         "Graduated from University of Chicago with M.S. in Applied Data Science",
