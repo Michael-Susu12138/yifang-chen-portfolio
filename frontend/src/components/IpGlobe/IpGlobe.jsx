@@ -1,28 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 const IpGlobe = () => {
+  const containerRef = useRef(null);
+
   useEffect(() => {
-    // Create the script element
+    const container = containerRef.current;
+    if (!container) return;
+
     const script = document.createElement("script");
     script.type = "text/javascript";
-    script.id = "clstr_globe";
+    script.id = "mapmyvisitors";
     script.src =
-      "//clustrmaps.com/globe.js?d=MqSYHDjXgz0lKFdRxdOv4y4hnl1U8Ox1H8A-tf-ggEY";
+      "//mapmyvisitors.com/map.js?d=YFARqzCfiVVu7h0gcLRGhJA8Pl5n071564oDENhL8O4&cl=ffffff&w=a";
 
-    // Append the script to the body
-    document.body.appendChild(script);
+    container.appendChild(script);
 
-    // Cleanup script when component unmounts
     return () => {
-      document.body.removeChild(script);
+      if (container.contains(script)) {
+        container.removeChild(script);
+      }
     };
   }, []);
 
   return (
-    <div>
-      {/* Placeholder for the globe */}
-      <div id="clustrmaps-globe-placeholder"></div>
-    </div>
+    <div ref={containerRef}></div>
   );
 };
 

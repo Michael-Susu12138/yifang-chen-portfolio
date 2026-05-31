@@ -95,6 +95,11 @@
   border-bottom: 1px solid #333; /* Bottom border to complete the box effect */
 }
 
+.motto img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Social Links Bottom Layout */
 .social-links-bottom {
   display: flex;
