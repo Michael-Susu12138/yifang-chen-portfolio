@@ -13,7 +13,7 @@ import {
 
 import IpGlobe from "../IpGlobe/IpGlobe";
 
-import OfficialImage from "/assets/gpt_profile_photo.png";
+import OfficialImage from "/assets/uchi_master.png";
 import "./Sidebar.css";
 
 const Sidebar = () => {
