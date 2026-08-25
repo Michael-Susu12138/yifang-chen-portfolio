@@ -340,6 +340,7 @@ const Home = () => {
               <li className="service-item">
                 <strong>Reviewer</strong>
                 <div className="service-tags">
+                  <span className="service-tag">NeurIPS 2026</span>
                   <span className="service-tag">ICLR 2026</span>
                   <span className="service-tag">NeurIPS 2025 @ WCTD</span>
                 </div>
