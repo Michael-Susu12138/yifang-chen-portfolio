@@ -11,7 +11,7 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons"; // Icons for location, email, and phone
 
-import IpGlobe from "../IpGlobe/IpGlobe";
+import VisitorTracker from "../VisitorTracker/VisitorTracker";
 
 import OfficialImage from "/assets/uchi_master.png";
 import "./Sidebar.css";
@@ -24,7 +24,7 @@ const Sidebar = () => {
           <img src={OfficialImage} alt="Yifang 'Michael' Chen" />
         </div>
         <h2>Yifang Chen</h2>
-        <p className="description">LLM Research Intern at Alibaba Tongyi Lab</p>
+        <p className="description">UChicago PhD Student in Data Science</p>
         <p className="research-interest">
           Research Interests: <strong>Large Language Models</strong>
         </p>
@@ -56,7 +56,7 @@ const Sidebar = () => {
       </div>
 
       <div className="motto">
-        <IpGlobe />
+        <VisitorTracker />
       </div>
 
       <div className="social-links-bottom">

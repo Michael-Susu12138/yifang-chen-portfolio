@@ -9,19 +9,19 @@ const News = () => {
   const newsItems = [
     {
       id: 0,
-      date: "March 2026",
-      title: "Accepted UChicago Data Science Ph.D. Offer",
+      date: "August 2026",
+      title: "Completed LLM Research Internship at Alibaba Tongyi Lab",
       description:
-        "I have accepted my offer to join the University of Chicago as an incoming Ph.D. student in Data Science, beginning a new education journey.",
-      tag: "Education",
+        "Concluded my internship researching efficient and hybrid LLM architectures, training-free inference-time looping, mechanistic interpretability, and dynamic halting for depth-recurrent Transformers.",
+      tag: "Industry",
     },
     {
       id: 1,
-      date: "Feb 2026 - Present",
-      title: "Joined Alibaba Tongyi Lab as LLM Research Intern",
+      date: "March 2026",
+      title: "Accepted UChicago Data Science Ph.D. Offer",
       description:
-        "Excited to start my journey as an LLM Research Intern at Alibaba Tongyi Lab!",
-      tag: "Industry",
+        "I accepted my offer to join the University of Chicago's Ph.D. program in Data Science.",
+      tag: "Education",
     },
     {
       id: 2,

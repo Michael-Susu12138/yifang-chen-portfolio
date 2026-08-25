@@ -4,8 +4,8 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import ParticlesComponent from "../../components/ParticlesComponent/ParticlesComponent";
 import MyCard from "../../components/Card/MyCard";
 import ProfileImage from "/assets/selfie.jpg"; // Image of yourself
-// import TongyiIcon from "/assets/tongyi_icon.jpeg";
 import TongyiIcon from "/assets/tongyi_icon_nobg.png";
+import UChicagoIcon from "/assets/uchicago_icon.png";
 import ProjectList from "../../components/ProjectList/ProjectList";
 import PublicationList from "../../components/PublicationList/PublicationList";
 import News from "../../components/News/News";
@@ -23,11 +23,12 @@ const Home = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
   const [educationExpanded, setEducationExpanded] = useState(false);
+  const [industryExpanded, setIndustryExpanded] = useState(false);
 
   const educationItems = [
     {
       school: "University of Chicago",
-      degree: "Incoming Ph.D. in Data Science",
+      degree: "Ph.D. in Data Science",
       date: "2026 - Present",
       icon: "/assets/uchicago_icon.png",
       iconAlt: "University of Chicago",
@@ -127,11 +128,14 @@ const Home = () => {
                 <p>
                   I am <strong>Yifang Chen "陈奕方"</strong>, a researcher with
                   a strong focus on building{" "}
-                  <strong>Efficient Large Language Models</strong>.
+                  <strong>
+                    Efficient and Expressive Large Language Models
+                  </strong>
+                  .
                 </p>
                 <p>
-                  I am an incoming Data Science PhD at the University of Chicago
-                  Fall 2026. During my master's, I was fortunate enough to be
+                  I am a Data Science Ph.D. student at the University of
+                  Chicago. During my master's, I was fortunate enough to be
                   advised by{" "}
                   <a
                     href="https://2prime.github.io/"
@@ -155,19 +159,19 @@ const Home = () => {
                 <div className="research-affiliation">
                   <div className="current-position">
                     <img
-                      src={TongyiIcon}
-                      alt="Alibaba Tongyi Lab"
+                      src={UChicagoIcon}
+                      alt="University of Chicago"
                       className="company-icon"
                     />
                     <p>
-                      I am currently an <strong> LLM Research Intern</strong> at{" "}
+                      I am a <strong>Data Science Ph.D. student</strong> at the{" "}
                       <a
-                        href="https://tongyi.aliyun.com/"
+                        href="https://datascience.uchicago.edu/education/phd-program/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="affiliation-link"
                       >
-                        Alibaba Tongyi Lab
+                        University of Chicago
                       </a>
                       .
                     </p>
@@ -246,25 +250,72 @@ const Home = () => {
 
             <section className="industry-section">
               <h2>Industry</h2>
-              <ul>
+              <ul className="industry-list">
                 <li className="industry-item">
-                  <img
-                    src={TongyiIcon}
-                    alt="Alibaba Tongyi Lab"
-                    className="company-logo-icon"
-                  />
-                  <div className="industry-details">
-                    <strong className="company-name">Alibaba Tongyi Lab</strong>
-                    <span className="role-name">LLM Research Intern</span>
-                    <span className="date">Feb 2026 - Present</span>
-                  </div>
-                  <div className="industry-location">
-                    <FontAwesomeIcon
-                      icon={faMapMarkerAlt}
-                      className="location-pin"
+                  <div className="industry-header">
+                    <img
+                      src={TongyiIcon}
+                      alt="Alibaba Tongyi Lab"
+                      className="company-logo-icon"
                     />
-                    <span>Hangzhou, China</span>
+                    <div className="industry-details">
+                      <strong className="company-name">
+                        Alibaba Tongyi Lab
+                      </strong>
+                      <span className="role-name">LLM Research Intern</span>
+                      <span className="date">Feb 2026 - Aug 2026</span>
+                    </div>
+                    <div className="industry-location">
+                      <FontAwesomeIcon
+                        icon={faMapMarkerAlt}
+                        className="location-pin"
+                      />
+                      <span>Hangzhou, China</span>
+                    </div>
                   </div>
+                  <button
+                    type="button"
+                    className="industry-toggle"
+                    aria-expanded={industryExpanded}
+                    aria-controls="tongyi-experience-details"
+                    onClick={() => setIndustryExpanded(!industryExpanded)}
+                  >
+                    {industryExpanded ? "Hide details" : "View details"}
+                  </button>
+                  {industryExpanded && (
+                    <ul
+                      id="tongyi-experience-details"
+                      className="industry-highlights"
+                    >
+                      <li>
+                        Researched efficient and hybrid LLM architectures,
+                        including DeltaNet, Gated DeltaNet, Kimi Linear,
+                        OLMo/OLMo Hybrid, Concept Models, Hyper-Connections and
+                        mHC, and depth-recurrent Transformers.
+                      </li>
+                      <li>
+                        Studied training-free inference-time looping, using
+                        repeated intermediate layers to increase effective model
+                        depth and improve reasoning without additional training.
+                      </li>
+                      <li>
+                        Investigated looped Transformers with Logit Lens,
+                        J-Lens, activation patching, and
+                        intermediate-representation analysis.
+                      </li>
+                      <li>
+                        Developed a dynamic halting strategy that detects
+                        activation signatures across WC, WW, CC, and CW
+                        transitions to determine when recurrent computation is
+                        beneficial.
+                      </li>
+                      <li>
+                        Analyzed hidden-state and prediction trajectories across
+                        loops to improve the effectiveness and computational
+                        efficiency of training-free depth recurrence.
+                      </li>
+                    </ul>
+                  )}
                 </li>
               </ul>
             </section>

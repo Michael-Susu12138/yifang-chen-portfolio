@@ -19,6 +19,9 @@ dist-ssr
 .env.test.local
 .env.production.local
 
+# Visitor analytics runtime data
+backend/data/*.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
