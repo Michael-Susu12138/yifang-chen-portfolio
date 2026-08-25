@@ -1,38 +1,20 @@
 /**
- * store.js — Lightweight JSON-based data store (no native dependencies).
+ * store.js — visit records and the aggregates the visitor map renders.
  *
- * Visits persist to data/visits.json. Every record carries pre-computed
- * time fields so filtering by day/week/hour never needs date parsing.
+ * Persistence is delegated to persistence.js, which writes JSON files locally
+ * and Upstash Redis on Vercel. Every record carries pre-computed time fields so
+ * filtering by day/week/hour never needs date parsing.
  */
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const DB_PATH = path.join(__dirname, "data", "visits.json");
+import { persistence } from "./persistence.js";
 
 const WEEKDAYS = [
   "Sunday", "Monday", "Tuesday", "Wednesday",
   "Thursday", "Friday", "Saturday",
 ];
 
-// ── Low-level I/O ─────────────────────────────────────────────────────────────
-// read+write pairs contain no `await`, so they cannot interleave on Node's
-// single thread — no locking needed at this scale.
-
-function readAll() {
-  try {
-    if (!fs.existsSync(DB_PATH)) return [];
-    return JSON.parse(fs.readFileSync(DB_PATH, "utf8")).map(normalize);
-  } catch {
-    return [];
-  }
-}
-
-function writeAll(records) {
-  fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
-  fs.writeFileSync(DB_PATH, JSON.stringify(records, null, 2), "utf8");
+async function readAll() {
+  const records = await persistence.allVisits();
+  return records.map(normalize);
 }
 
 /** Backfill time fields on records written before this schema existed. */
@@ -83,29 +65,22 @@ function timeFields(ms, offsetSeconds) {
 
 /** Append a visit and return its assigned id. */
 export function addVisit(visit, offsetSeconds) {
-  const records = readAll();
-  const id = (records[records.length - 1]?.id ?? 0) + 1;
-  records.push({ id, ...visit, ...timeFields(Date.now(), offsetSeconds) });
-  writeAll(records);
-  return id;
+  return persistence.appendVisit({
+    ...visit,
+    ...timeFields(Date.now(), offsetSeconds),
+  });
 }
 
 /** Merge extra fields into an existing visit (used by async enrichment). */
 export function updateVisit(id, patch) {
-  const records = readAll();
-  const i = records.findIndex((v) => v.id === id);
-  if (i === -1) return false;
-  records[i] = { ...records[i], ...patch };
-  writeAll(records);
-  return true;
+  return persistence.patchVisit(id, patch);
 }
 
 /** Most recent visit from `ip` within `withinHours`, or undefined. */
-export function findRecentByIp(ip, withinHours = 1) {
+export async function findRecentByIp(ip, withinHours = 1) {
   const cutoff = Date.now() - withinHours * 3_600_000;
-  return readAll()
-    .reverse()
-    .find((v) => v.ip === ip && v.ts > cutoff);
+  const records = await readAll();
+  return records.reverse().find((v) => v.ip === ip && v.ts > cutoff);
 }
 
 // ── Queries ───────────────────────────────────────────────────────────────────
@@ -119,7 +94,7 @@ export function findRecentByIp(ip, withinHours = 1) {
  * @param q        free-text across all location fields
  * @param order    "asc" | "desc" (default desc = newest first)
  */
-export function queryVisits(filters = {}) {
+export async function queryVisits(filters = {}) {
   const {
     from, to, country, countryCode, region, county, city, q,
     limit = 100, offset = 0, order = "desc",
@@ -134,7 +109,8 @@ export function queryVisits(filters = {}) {
     ? new Date(to).getTime() + (/^\d{4}-\d{2}-\d{2}$/.test(to) ? 86_399_999 : 0)
     : Infinity;
 
-  let rows = readAll().filter((v) => {
+  const all = await readAll();
+  let rows = all.filter((v) => {
     if (v.ts < fromMs || v.ts > toMs) return false;
     if (country && !eq(v.country, country)) return false;
     if (countryCode && !eq(v.country_code, countryCode)) return false;
@@ -162,9 +138,12 @@ export function queryVisits(filters = {}) {
 }
 
 /** Aggregate stats for the dashboard, honouring the same date filters. */
-export function getStats(filters = {}) {
-  const { visits: _all } = queryVisits({ ...filters, limit: Infinity, offset: 0 });
-  const records = _all;
+export async function getStats(filters = {}) {
+  const { visits: records } = await queryVisits({
+    ...filters,
+    limit: Infinity,
+    offset: 0,
+  });
 
   const totalVisits = records.length;
   const uniqueVisitors = new Set(records.map((v) => v.ip)).size;

@@ -11,13 +11,7 @@
  * centroid, not the visitor's doorstep. County is usually trustworthy;
  * neighbourhood is a best-effort hint, not a fact.
  */
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const CACHE_PATH = path.join(__dirname, "data", "geocache.json");
+import { persistence } from "./persistence.js";
 
 const IP_API_FIELDS = [
   "status", "message", "query",
@@ -35,30 +29,11 @@ const IP_API_FIELDS = [
 const USER_AGENT =
   "yifang-chen-portfolio/1.0 (visitor map; yifangc@uchicago.edu)";
 
-// ── Reverse-geocode cache ─────────────────────────────────────────────────────
-// Coordinates repeat constantly (same ISP centroid), so caching keeps us well
-// inside Nominatim's 1 req/sec policy.
-
-let cache = null;
-
-function loadCache() {
-  if (cache) return cache;
-  try {
-    cache = JSON.parse(fs.readFileSync(CACHE_PATH, "utf8"));
-  } catch {
-    cache = {};
-  }
-  return cache;
-}
-
-function saveCache() {
-  fs.mkdirSync(path.dirname(CACHE_PATH), { recursive: true });
-  fs.writeFileSync(CACHE_PATH, JSON.stringify(cache, null, 2), "utf8");
-}
-
 // ── Nominatim rate limiter ────────────────────────────────────────────────────
 // Their policy is max 1 request/second. Chain every call through one promise
-// so concurrent visitors queue up instead of firing in parallel.
+// so concurrent visitors queue up instead of firing in parallel. This only
+// serialises within a single process, which is why the shared cache below
+// matters so much once several serverless instances are warm.
 
 let queue = Promise.resolve();
 
@@ -110,7 +85,7 @@ export async function reverseGeocode(lat, lon) {
   // ~110 m precision: fine enough to distinguish neighbourhoods, coarse
   // enough that repeat visitors reuse the cached entry.
   const key = `${lat.toFixed(3)},${lon.toFixed(3)}`;
-  const cached = loadCache()[key];
+  const cached = await persistence.getGeo(key);
   if (cached) return cached;
 
   try {
@@ -140,8 +115,7 @@ export async function reverseGeocode(lat, lon) {
       place_label: data.display_name || null,
     };
 
-    cache[key] = detail;
-    saveCache();
+    await persistence.setGeo(key, detail);
     return detail;
   } catch {
     return {};
