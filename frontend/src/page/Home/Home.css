@@ -129,12 +129,13 @@
 }
 
 .company-icon {
-  height: 28px;
-  width: 28px;
-  object-fit: contain;
-  filter: brightness(1.05);
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
-  border-radius: 6px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: white;
 }
 
 /* Profile image styling */
@@ -209,7 +210,7 @@ h2 {
 /* Industry section */
 /* Industry heading — override only the border colour */
 .industry-section h2 {
-  border-bottom-color: #5165E8;
+  border-bottom-color: #5165e8;
 }
 
 .industry-section > .industry-list {
@@ -225,8 +226,10 @@ h2 {
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-left: 3px solid #5165E8;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 3px solid #5165e8;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -283,7 +286,9 @@ h2 {
   font: inherit;
   font-size: 0.9em;
   cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .industry-toggle:hover,
@@ -313,7 +318,7 @@ h2 {
 
 .role-name {
   font-size: 0.9em;
-  color: #8B9BF7;
+  color: #8b9bf7;
 }
 
 /* Education and publications sections */
@@ -410,7 +415,9 @@ h2 {
   padding: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-left: 3px solid #780000;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   display: flex;
   align-items: center;
 }
@@ -475,7 +482,6 @@ h2 {
   margin-top: 40px;
 }
 
-
 /* Ongoing Projects section */
 .ongoing-projects-section {
   margin-top: 40px;
@@ -494,7 +500,9 @@ h2 {
   padding: 24px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   border-left: 5px solid #780000;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -605,12 +613,10 @@ h2 {
   color: white;
 }
 
-
 /* Service section */
 .service-section {
   margin-top: 40px;
 }
-
 
 .service-list {
   list-style: none;
@@ -657,7 +663,6 @@ h2 {
   margin-top: 40px;
   margin-bottom: 60px;
 }
-
 
 .interests-section p {
   font-size: 1.1em;
@@ -721,7 +726,9 @@ h2 {
 
 /* Sidebar container */
 .sidebar-container {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 /* Sidebar overlay */

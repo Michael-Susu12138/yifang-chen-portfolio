@@ -166,7 +166,7 @@ const Home = () => {
                     <p>
                       I am a <strong>Data Science Ph.D. student</strong> at the{" "}
                       <a
-                        href="https://datascience.uchicago.edu/education/phd-program/"
+                        href="https://datascience.uchicago.edu/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="affiliation-link"
