@@ -133,29 +133,6 @@ const Home = () => {
                   </strong>
                   .
                 </p>
-                <p>
-                  I am a Data Science Ph.D. student at the University of
-                  Chicago. During my master's, I was fortunate enough to be
-                  advised by{" "}
-                  <a
-                    href="https://2prime.github.io/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="collab-link"
-                  >
-                    Prof. Yiping Lu
-                  </a>{" "}
-                  and{" "}
-                  <a
-                    href="https://limanling.github.io/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="collab-link"
-                  >
-                    Prof. Manling Li
-                  </a>
-                  .
-                </p>
                 <div className="research-affiliation">
                   <div className="current-position">
                     <img
